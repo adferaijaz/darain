@@ -138,12 +138,12 @@
     overflow: hidden;
     padding: 120px 20px 80px;
   }
-  .hero-content { position: relative; z-index: 2; }
+  .hero-content { position: relative; z-index: 2; max-width: 800px; width: 100%; margin: 0 auto; }
 
   .big-four {
     font-family: 'Nunito', sans-serif;
     font-weight: 900;
-    font-size: clamp(180px, 30vw, 320px);
+    font-size: clamp(120px, 20vw, 220px);
     line-height: 0.85;
     background: linear-gradient(135deg, rgba(255,107,157,0.25), rgba(90,200,250,0.25));
     -webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -151,7 +151,7 @@
     border: 2px solid rgba(255,255,255,0.4);
     box-shadow: 0 20px 80px rgba(255,107,157,0.18), inset 0 2px 0 rgba(255,255,255,0.6);
     border-radius: 48px;
-    padding: 20px 40px;
+    padding: 10px 30px;
     display: inline-block;
     color: rgba(255,107,157,0.5);
     text-shadow: 0 4px 20px rgba(255,107,157,0.3);
@@ -176,7 +176,7 @@
   .hero-title {
     font-family: 'Nunito', sans-serif;
     font-weight: 900;
-    font-size: clamp(36px, 6vw, 72px);
+    font-size: clamp(32px, 5vw, 64px);
     line-height: 1.1;
     color: var(--text-primary);
     animation: fadeUp 0.8s var(--spring) 0.35s both;
@@ -185,35 +185,92 @@
   .hero-title span { color: var(--pink); }
 
   .hero-sub {
-    font-size: clamp(16px, 2.5vw, 22px);
+    font-size: clamp(15px, 2vw, 20px);
     color: var(--text-secondary);
     font-weight: 400;
-    margin-bottom: 36px;
+    margin-bottom: 28px;
     animation: fadeUp 0.8s var(--spring) 0.5s both;
   }
 
-  .hero-btns {
-    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
-    animation: fadeUp 0.8s var(--spring) 0.65s both;
+  /* Birthday Form styling */
+  .hero-form-container {
+    max-width: 500px;
+    margin: 0 auto 32px;
+    padding: 24px;
+    border-radius: var(--radius);
+    animation: fadeUp 0.8s var(--spring) 0.6s both;
+    text-align: left;
   }
-  .btn-primary {
+  .form-title {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 14px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .form-group {
+    margin-bottom: 12px;
+  }
+  .form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.6);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--text-primary);
+    transition: all 0.3s;
+  }
+  .form-input:focus {
+    outline: none;
+    border-color: var(--pink);
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 0 3px rgba(255,107,157,0.2);
+  }
+  textarea.form-input {
+    resize: none;
+    height: 80px;
+  }
+  .btn-submit {
+    width: 100%;
     background: linear-gradient(135deg, var(--pink), #FF8FB3);
     color: white; border: none;
-    padding: 14px 30px; border-radius: 50px;
+    padding: 12px 24px; border-radius: var(--radius-sm);
     font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 15px;
     cursor: pointer;
-    box-shadow: 0 8px 24px rgba(255,107,157,0.4);
+    box-shadow: 0 6px 20px rgba(255,107,157,0.3);
+    transition: all 0.3s var(--spring);
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(255,107,157,0.4); }
+  .btn-submit:active { transform: scale(0.98); }
+
+  .hero-btns {
+    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+    animation: fadeUp 0.8s var(--spring) 0.7s both;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--blue), #8AD8FF);
+    color: white; border: none;
+    padding: 12px 28px; border-radius: 50px;
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(90,200,250,0.3);
     transition: all 0.3s var(--spring);
     text-decoration: none; display: inline-block;
   }
-  .btn-primary:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 14px 32px rgba(255,107,157,0.5); }
+  .btn-primary:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 12px 28px rgba(90,200,250,0.4); }
   .btn-glass {
     background: rgba(255,255,255,0.25);
     backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     border: 1.5px solid rgba(255,255,255,0.5);
     color: var(--text-primary);
-    padding: 14px 30px; border-radius: 50px;
-    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 15px;
+    padding: 12px 28px; border-radius: 50px;
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 14px;
     cursor: pointer;
     box-shadow: 0 4px 16px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.6);
     transition: all 0.3s var(--spring);
@@ -236,7 +293,7 @@
   }
 
   .scroll-chevron {
-    position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
     display: flex; flex-direction: column; align-items: center; gap: 4px;
     animation: bounceDown 2s ease-in-out infinite;
     cursor: pointer; z-index: 2;
@@ -580,7 +637,7 @@
   /* ── MESSAGES ── */
   #messages { background: transparent; }
   .messages-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
-  .msg-card { border-radius: var(--radius); padding: 28px; transition: transform 0.3s var(--spring); }
+  .msg-card { border-radius: var(--radius); padding: 28px; transition: transform 0.3s var(--spring); position: relative; }
   .msg-card:hover { transform: translateY(-6px); }
   .msg-avatar { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 14px; font-weight: 800; font-family: 'Nunito', sans-serif; }
   .msg-name { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 16px; margin-bottom: 2px; }
@@ -625,8 +682,7 @@
 
   /* ── FOOTER ── */
   footer {
-    padding: 48px 24px;
-    text-align: center;
+    padding: 48px 24px; text-align: center;
     border-top: 1px solid rgba(255,107,157,0.2);
     background: rgba(255,255,255,0.4);
     backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -635,7 +691,12 @@
   .footer-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 18px; color: var(--text-primary); margin-bottom: 8px; }
   .footer-sub { font-size: 13px; color: var(--text-tertiary); }
   .social-icons { display: flex; gap: 12px; justify-content: center; margin: 20px 0; }
-  .social-icon { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,107,157,0.1); border: 1px solid rgba(255,107,157,0.2); display: flex; align-items: center; justify-content: center; font-size: 18px; transition: all 0.25s; cursor: default; }
+  .social-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(255,107,157,0.1); border: 1px solid rgba(255,107,157,0.2);
+    display: flex; align-items: center; justify-content: center; font-size: 18px;
+    transition: all 0.25s; cursor: default;
+  }
   .social-icon:hover { background: rgba(255,107,157,0.2); transform: translateY(-3px); }
 
   /* ── RESPONSIVE ── */
@@ -660,1418 +721,708 @@
 
   /* Reduced motion */
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 
   /* Shimmer skeleton */
-  @keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-  }
+  @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
   .shimmer::after {
     content: ''; position: absolute; inset: 0;
     background: linear-gradient(90deg, transparent 30%, rgba(255,255,255,0.4) 50%, transparent 70%);
-    background-size: 200% 100%;
-    animation: shimmer 2.5s infinite;
-    pointer-events: none;
+    background-size: 200% 100%; animation: shimmer 2.5s infinite; pointer-events: none;
   }
 
   /* Staggered reveal delays */
-  .s1 { transition-delay: 0.05s; }
-  .s2 { transition-delay: 0.12s; }
-  .s3 { transition-delay: 0.19s; }
-  .s4 { transition-delay: 0.26s; }
-  .s5 { transition-delay: 0.33s; }
-  .s6 { transition-delay: 0.40s; }
-  .s7 { transition-delay: 0.47s; }
-  .s8 { transition-delay: 0.54s; }
-  .s9 { transition-delay: 0.61s; }
-  .s10 { transition-delay: 0.68s; }
-  .s11 { transition-delay: 0.75s; }
-  .s12 { transition-delay: 0.82s; }
+  .s1 { transition-delay: 0.05s; } .s2 { transition-delay: 0.12s; }
+  .s3 { transition-delay: 0.19s; } .s4 { transition-delay: 0.26s; }
+  .s5 { transition-delay: 0.33s; } .s6 { transition-delay: 0.40s; }
+  .s7 { transition-delay: 0.47s; } .s8 { transition-delay: 0.54s; }
+  .s9 { transition-delay: 0.61s; } .s10 { transition-delay: 0.68s; }
+  .s11 { transition-delay: 0.75s; } .s12 { transition-delay: 0.82s; }
 </style>
 </head>
 <body>
+  <div class="mesh-bg"></div>
+  <canvas id="confetti-canvas"></canvas>
 
-<div class="mesh-bg"></div>
-<canvas id="confetti-canvas"></canvas>
-
-<!-- NAVBAR -->
-<nav id="navbar" class="glass">
-  <a href="#hero" class="nav-logo">🎂 Mohammad Darain</a>
-  <div class="nav-links">
-    <a href="#story">Story</a>
-    <a href="#memories">Memories</a>
-    <a href="#milestones">Milestones</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#messages">Messages</a>
-  </div>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- MOBILE MENU -->
-<div id="mobile-menu">
-  <button class="menu-close" id="menu-close">✕</button>
-  <a href="#story" class="mobile-link">Story</a>
-  <a href="#memories" class="mobile-link">Memories</a>
-  <a href="#milestones" class="mobile-link">Milestones</a>
-  <a href="#gallery" class="mobile-link">Gallery</a>
-  <a href="#messages" class="mobile-link">Love</a>
-  <a href="#cake-section" class="mobile-link">Cake 🎂</a>
-</div>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="particles" id="particles"></div>
-  <div class="hero-content">
-    <div class="big-four reveal visible">4</div>
-    <div class="hero-badge">✨ Celebrating Mohammad Darain</div>
-    <h1 class="hero-title">Happy 4th Birthday,<br><span>Mohammad Darain!</span> 🎉</h1>
-    <p class="hero-sub">4 years of magic, laughter &amp; love 🌈</p>
-    <div class="hero-btns">
-      <a href="#memories" class="btn-primary">Explore Memories 🌟</a>
-      <a href="#gallery" class="btn-glass">See Gallery 📸</a>
+  <nav id="navbar" class="glass">
+    <a href="#hero" class="nav-logo">🎂 Mohammad Darain</a>
+    <div class="nav-links">
+      <a href="#messages">Messages</a>
+      <a href="#story">Story</a>
+      <a href="#memories">Memories</a>
+      <a href="#milestones">Milestones</a>
+      <a href="#gallery">Gallery</a>
     </div>
-  </div>
-  <div class="scroll-chevron" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">
-    <span>SCROLL</span>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8E8E93" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-  </div>
-</section>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-<!-- STORY BEGINS -->
-<section id="story">
-  <div class="container">
-    <div class="center reveal">
-      <div class="section-label">Chapter One</div>
-      <h2 class="section-title">The Story Begins ✨</h2>
-    </div>
-    <div class="story-quote reveal">Every big adventure starts with one tiny, perfect moment.</div>
+  <div id="mobile-menu">
+    <button class="menu-close" id="menu-close">✕</button>
+    <a href="#messages" class="mobile-link">Messages</a>
+    <a href="#story" class="mobile-link">Story</a>
+    <a href="#memories" class="mobile-link">Memories</a>
+    <a href="#milestones" class="mobile-link">Milestones</a>
+    <a href="#gallery" class="mobile-link">Gallery</a>
+    <a href="#cake-section" class="mobile-link">Cake 🎂</a>
+  </div>
 
-    <div class="birth-stats">
-      <div class="stat-card glass reveal s1">
-        <div class="stat-icon">⚖️</div>
-        <div class="stat-value">3.2 kg</div>
-        <div class="stat-label">Birth Weight</div>
+  <section id="hero">
+    <div class="particles" id="particles"></div>
+    <div class="hero-content">
+      <div class="big-four reveal visible">4</div>
+      <div class="hero-badge">✨ Celebrating Mohammad Darain</div>
+      <h1 class="hero-title">Happy 4th Birthday,<br><span>Mohammad Darain!</span> 🎉</h1>
+      <p class="hero-sub">4 years of magic, laughter &amp; love 🌈</p>
+      
+      <div class="hero-form-container glass">
+        <h2 class="form-title">✍️ Leave a Birthday Message</h2>
+        <form id="birthday-wish-form">
+          <div class="form-group">
+            <input type="text" id="visitor-name" class="form-input" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <textarea id="visitor-message" class="form-input" placeholder="Write your warm birthday message for Mohammad Darain here..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message 🎉</button>
+        </form>
       </div>
-      <div class="stat-card glass reveal s2">
-        <div class="stat-icon">📏</div>
-        <div class="stat-value">50 cm</div>
-        <div class="stat-label">Birth Height</div>
-      </div>
-      <div class="stat-card glass reveal s3">
-        <div class="stat-icon">🕐</div>
-        <div class="stat-value">04:20 PM</div>
-        <div class="stat-label">Time of Arrival</div>
-      </div>
-      <div class="stat-card glass reveal s4">
-        <div class="stat-icon">📅</div>
-        <div class="stat-value">June 16</div>
-        <div class="stat-label">Birthday</div>
+
+      <div class="hero-btns">
+        <a href="#messages" class="btn-primary">View Guestbook 📜</a>
+        <a href="#gallery" class="btn-glass">See Gallery 📸</a>
       </div>
     </div>
+    <div class="scroll-chevron" onclick="document.getElementById('messages').scrollIntoView({behavior:'smooth'})">
+      <span>GUESTBOOK</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8E8E93" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </section>
 
-    <div class="baby-photo glass reveal shimmer">
-      <div class="photo-scene">
-        <!-- Baby SVG illustration -->
-        <svg viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-          <!-- Stars background -->
-          <circle cx="30" cy="30" r="3" fill="#FFD60A" opacity="0.5"/>
-          <circle cx="280" cy="50" r="2" fill="#FFD60A" opacity="0.4"/>
-          <circle cx="60" cy="200" r="2.5" fill="#5AC8FA" opacity="0.4"/>
-          <circle cx="260" cy="180" r="3" fill="#FF6B9D" opacity="0.4"/>
-          <circle cx="150" cy="20" r="2" fill="#BF5AF2" opacity="0.4"/>
-          <!-- Crib base -->
-          <rect x="60" y="150" width="200" height="70" rx="12" fill="#FFC8E0" opacity="0.6"/>
-          <rect x="70" y="158" width="180" height="10" rx="5" fill="rgba(255,255,255,0.5)"/>
-          <!-- Baby body -->
-          <ellipse cx="160" cy="165" rx="44" ry="30" fill="#FFDDE8"/>
-          <!-- Head -->
-          <circle cx="160" cy="128" r="36" fill="#FFDDE8"/>
-          <!-- Eyes closed (sleeping) -->
-          <path d="M148 126 Q152 123 156 126" stroke="#FF6B9D" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path d="M164 126 Q168 123 172 126" stroke="#FF6B9D" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <!-- Smile -->
-          <path d="M153 136 Q160 142 167 136" stroke="#FF6B9D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <!-- Cheeks -->
-          <circle cx="144" cy="133" r="8" fill="#FF6B9D" opacity="0.2"/>
-          <circle cx="176" cy="133" r="8" fill="#FF6B9D" opacity="0.2"/>
-          <!-- Baby cap -->
-          <ellipse cx="160" cy="100" rx="34" ry="20" fill="#FF6B9D" opacity="0.6"/>
-          <circle cx="160" cy="82" r="8" fill="#FF6B9D" opacity="0.5"/>
-          <!-- Stars around -->
-          <text x="30" y="110" font-size="20" opacity="0.6">⭐</text>
-          <text x="255" y="110" font-size="18" opacity="0.5">🌙</text>
-          <text x="90" y="50" font-size="14" opacity="0.5">✨</text>
-          <text x="210" y="40" font-size="14" opacity="0.5">💫</text>
+  <section id="messages">
+    <div class="container">
+      <div class="center reveal">
+        <span class="section-label">Guestbook</span>
+        <h2 class="section-title">Birthday Blessings ❤️</h2>
+        <p class="section-sub">Read all the sweet notes left for Mohammad Darain on his 4th birthday milestone.</p>
+      </div>
+      <div class="messages-grid" id="messages-display-grid">
+        <div class="msg-card glass reveal s1" style="border-left: 5px solid var(--pink);">
+          <div class="msg-heart">💝</div>
+          <div class="msg-avatar" style="background: rgba(255,107,157,0.2); color: var(--pink);">M</div>
+          <h3 class="msg-name">Mom &amp; Dad</h3>
+          <p class="msg-rel">Parents</p>
+          <p class="msg-text">Happy 4th Birthday to our little bundle of sunshine! You bring so much joy, energy, and wonder into our lives every single day. Keep shining bright, Darain!</p>
+        </div>
+        <div class="msg-card glass reveal s2" style="border-left: 5px solid var(--blue);">
+          <div class="msg-heart">🎉</div>
+          <div class="msg-avatar" style="background: rgba(90,200,250,0.2); color: var(--blue);">A</div>
+          <h3 class="msg-name">Aunt Sarah</h3>
+          <p class="msg-rel">Family</p>
+          <p class="msg-text">Can't believe you are already 4 years old today! Sending you the biggest hugs, lots of toys, and infinite love on your big day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="container">
+      <div class="center reveal">
+        <span class="section-label">Introduction</span>
+        <h2 class="section-title">The Story of Our Little Champ</h2>
+        <p class="section-sub">A glance at the beautiful day Mohammad Darain arrived and blessed our hearts forever.</p>
+      </div>
+      <div class="story-quote reveal s1">
+        "On this special day, four years ago, our world became exponentially brighter and filled with beautiful giggles."
+      </div>
+      <div class="birth-stats">
+        <div class="stat-card glass reveal s2">
+          <div class="stat-icon">📅</div>
+          <div class="stat-value">June 11</div>
+          <div class="stat-label">Birth Date</div>
+        </div>
+        <div class="stat-card glass reveal s3">
+          <div class="stat-icon">⏰</div>
+          <div class="stat-value">08:45 AM</div>
+          <div class="stat-label">Time of Birth</div>
+        </div>
+        <div class="stat-card glass reveal s4">
+          <div class="stat-icon">⚖️</div>
+          <div class="stat-value">3.2 kg</div>
+          <div class="stat-label">Weight</div>
+        </div>
+        <div class="stat-card glass reveal s5">
+          <div class="stat-icon">📏</div>
+          <div class="stat-value">50 cm</div>
+          <div class="stat-label">Height</div>
+        </div>
+      </div>
+      <div class="baby-photo reveal s6">
+        <div class="photo-scene">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+          <span style="font-size:12px; color:var(--pink); font-weight:600; margin-top:10px;">[ Photo Placeholder ]</span>
+        </div>
+        <div class="photo-caption">
+          <p>Day One Comforts 🐣</p>
+          <span>Welcome home, little miracle</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="memories">
+    <div class="container">
+      <div class="center reveal">
+        <span class="section-label">Timeline</span>
+        <h2 class="section-title">4 Years of Incredible Growth</h2>
+        <p class="section-sub">Following every precious milestone from infancy up to today's big celebration.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-spine">
+          <div class="timeline-dot-travel"></div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="tl-card glass reveal s1">
+            <div class="tl-img">
+              <svg fill="none" stroke="rgba(255,107,157,0.3)" stroke-width="1" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100"/><line x1="100" y1="0" x2="0" y2="100"/></svg>
+              <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:40px;">🍼</div>
+            </div>
+            <div class="tl-body">
+              <span class="tl-age">Age 0 - 1</span>
+              <h3 class="tl-title">First Steps &amp; Giggles</h3>
+              <p class="tl-desc">The sweet transition from rolling over to making those first uncertain steps across the living room carpet.</p>
+              <div class="tl-tags"><span class="tl-tag">First Word</span><span class="tl-tag">Crawling</span></div>
+            </div>
+          </div>
+          <div class="timeline-center"><div class="tl-node"></div></div>
+          <div class="tl-empty"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tl-empty"></div>
+          <div class="timeline-center"><div class="tl-node" style="border-color:var(--blue);"></div></div>
+          <div class="tl-card glass reveal s2">
+            <div class="tl-img">
+              <svg fill="none" stroke="rgba(90,200,250,0.3)" stroke-width="1" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100"/><line x1="100" y1="0" x2="0" y2="100"/></svg>
+              <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:40px;">🧸</div>
+            </div>
+            <div class="tl-body">
+              <span class="tl-age" style="background:rgba(90,200,250,0.15); color:var(--blue);">Age 1 - 2</span>
+              <h3 class="tl-title">Curious Explorer</h3>
+              <p class="tl-desc">Everything became a playground! Expressing immense interest in storybooks, stacking blocks, and musical sounds.</p>
+              <div class="tl-tags"><span class="tl-tag">Running Around</span><span class="tl-tag">Blocks Builder</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tl-card glass reveal s3">
+            <div class="tl-img">
+              <svg fill="none" stroke="rgba(255,214,10,0.3)" stroke-width="1" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100"/><line x1="100" y1="0" x2="0" y2="100"/></svg>
+              <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:40px;">🎨</div>
+            </div>
+            <div class="tl-body">
+              <span class="tl-age" style="background:rgba(255,214,10,0.2); color:#A57C00;">Age 2 - 3</span>
+              <h3 class="tl-title">Expressive Talking &amp; Art</h3>
+              <p class="tl-desc">Forming complete imaginative sentences and choosing favorite colors to make wonderful scribble masterpieces.</p>
+              <div class="tl-tags"><span class="tl-tag">Nonstop Talker</span><span class="tl-tag">Coloring Masters</span></div>
+            </div>
+          </div>
+          <div class="timeline-center"><div class="tl-node" style="border-color:var(--yellow);"></div></div>
+          <div class="tl-empty"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tl-empty"></div>
+          <div class="timeline-center"><div class="tl-node" style="border-color:var(--green);"></div></div>
+          <div class="tl-card glass reveal s4">
+            <div class="tl-img">
+              <svg fill="none" stroke="rgba(52,199,89,0.3)" stroke-width="1" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100"/><line x1="100" y1="0" x2="0" y2="100"/></svg>
+              <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:40px;">🚀</div>
+            </div>
+            <div class="tl-body">
+              <span class="tl-age" style="background:rgba(52,199,89,0.15); color:var(--green);">Age 3 - 4</span>
+              <h3 class="tl-title">Ready for Pre-School Adventures</h3>
+              <p class="tl-desc">Full of high energy, loving friends, singing nursery rhymes by heart, and expressing curiosity about stars and space.</p>
+              <div class="tl-tags"><span class="tl-tag">Independent Kid</span><span class="tl-tag">Super Smart</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="milestones">
+    <div class="container">
+      <div class="center reveal">
+        <span class="section-label">Achievements</span>
+        <h2 class="section-title">Darain's Interactive Badge Box</h2>
+        <p class="section-sub">Hover or tap on each colorful badge to reveal a special skill he mastered over the years.</p>
+      </div>
+      <div class="milestones-grid">
+        <div class="milestone-card glass reveal s1">
+          <div class="milestone-inner">
+            <div class="milestone-front">
+              <div class="milestone-glow" style="--c1:var(--pink); --c2:var(--orange);">🏃‍♂️</div>
+              <p class="milestone-name">Super Runner</p>
+              <span class="milestone-sub">Unlocked at 18 months</span>
+            </div>
+            <div class="milestone-back">He zooms through the house faster than the speed of sound when playtime hits!</div>
+          </div>
+        </div>
+        <div class="milestone-card glass reveal s2">
+          <div class="milestone-inner">
+            <div class="milestone-front">
+              <div class="milestone-glow" style="--c1:var(--blue); --c2:var(--purple);">🎵</div>
+              <p class="milestone-name">Melody Hummer</p>
+              <span class="milestone-sub">Unlocked at 2 years</span>
+            </div>
+            <div class="milestone-back">He catches complex rhythms and remembers complete tunes effortlessly.</div>
+          </div>
+        </div>
+        <div class="milestone-card glass reveal s3">
+          <div class="milestone-inner">
+            <div class="milestone-front">
+              <div class="milestone-glow" style="--c1:var(--yellow); --c2:var(--green);">🧩</div>
+              <p class="milestone-name">Puzzle Solver</p>
+              <span class="milestone-sub">Unlocked at 3 years</span>
+            </div>
+            <div class="milestone-back">Arranges matching blocks and shapes using incredible geometric precision.</div>
+          </div>
+        </div>
+        <div class="milestone-card glass reveal s4">
+          <div class="milestone-inner">
+            <div class="milestone-front">
+              <div class="milestone-glow" style="--c1:var(--purple); --c2:var(--pink);">🗣️</div>
+              <p class="milestone-name">Story Teller</p>
+              <span class="milestone-sub">Unlocked at 3.5 years</span>
+            </div>
+            <div class="milestone-back">Creates fascinating, funny tales detailing his toy interactions and adventures.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <div class="center reveal">
+        <span class="section-label">Media Gallery</span>
+        <h2 class="section-title">Moments Captured in Time</h2>
+        <p class="section-sub">Filter through memory folders to view snapshot milestones of Mohammad Darain.</p>
+      </div>
+      <div class="gallery-filters reveal s1">
+        <button class="filter-btn active" data-filter="all">All Snaps</button>
+        <button class="filter-btn" data-filter="infant">Infancy 👶</button>
+        <button class="filter-btn" data-filter="toddler">Toddler Steps 🧸</button>
+        <button class="filter-btn" data-filter="recent">Recent Gems ✨</button>
+      </div>
+      <div class="gallery-grid" id="gallery-container">
+        <div class="gallery-item glass reveal s2" data-cat="infant" onclick="openLightbox(0)">
+          <div class="year-tag">Year 1</div>
+          <div class="gallery-scene" style="height:240px; background:linear-gradient(135deg, #FFEBEB, #FFD1D1);">
+            <svg width="40" height="40" fill="none" stroke="rgba(255,107,157,0.3)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <div class="gallery-overlay">
+            <p>Tiny Sleepy Angel</p>
+            <span>Sweetest morning naps</span>
+          </div>
+        </div>
+        <div class="gallery-item glass reveal s3" data-cat="toddler" onclick="openLightbox(1)">
+          <div class="year-tag">Year 2</div>
+          <div class="gallery-scene" style="height:320px; background:linear-gradient(135deg, #E6F3FF, #B9DFFF);">
+            <svg width="40" height="40" fill="none" stroke="rgba(90,200,250,0.3)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <div class="gallery-overlay">
+            <p>First Birthday Cake Smash</p>
+            <span>Frosting everywhere!</span>
+          </div>
+        </div>
+        <div class="gallery-item glass reveal s4" data-cat="recent" onclick="openLightbox(2)">
+          <div class="year-tag">Year 4</div>
+          <div class="gallery-scene" style="height:260px; background:linear-gradient(135deg, #FFF9E6, #FFEAA7);">
+            <svg width="40" height="40" fill="none" stroke="rgba(255,214,10,0.3)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <div class="gallery-overlay">
+            <p>Pre-school Readiness Smile</p>
+            <span>All dressed up and proud</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="lightbox">
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <button class="lb-nav" id="lb-prev" onclick="changeLightbox(-1)">❮</button>
+    <button class="lb-nav" id="lb-next" onclick="changeLightbox(1)">❯</button>
+    <div class="lightbox-inner glass">
+      <div id="lightbox-render-area" style="height: 450px; width: 100%; display: flex; align-items: center; justify-content: center;"></div>
+    </div>
+  </div>
+
+  <section id="funfacts">
+    <div class="container">
+      <div class="center reveal">
+        <span class="section-label">Fun Numbers</span>
+        <h2 class="section-title">Mohammad Darain by the Numbers</h2>
+        <p class="section-sub">A carousel of hilarious parameters framing his everyday habits.</p>
+      </div>
+      <div class="carousel-wrap reveal s2">
+        <div class="carousel-track" id="carousel-track">
+          <div class="fact-card glass">
+            <span class="fact-emoji">🥛</span>
+            <div class="fact-stat">1,460+</div>
+            <p class="fact-label">Glasses of milk consumed happily over 4 full years.</p>
+          </div>
+          <div class="fact-card glass">
+            <span class="fact-emoji">🚗</span>
+            <div class="fact-stat">850 hrs</div>
+            <p class="fact-label">Driving around imaginary miniature racing cars around sofas.</p>
+          </div>
+          <div class="fact-card glass">
+            <span class="fact-emoji">📖</span>
+            <div class="fact-stat">320 stories</div>
+            <p class="fact-label">Bedtime book readings chanted with enthusiastic clapping.</p>
+          </div>
+          <div class="fact-card glass">
+            <span class="fact-emoji">💤</span>
+            <div class="fact-stat">14,200 hrs</div>
+            <p class="fact-label">Dreaming of spaceships, teddy bears, and beautiful playgrounds.</p>
+          </div>
+        </div>
+        <div class="carousel-dots" id="carousel-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="videos">
+    <div class="container">
+      <div class="center reveal">
+        <span class="section-label">Video Clips</span>
+        <h2 class="section-title">Laughs in Full Motion</h2>
+        <p class="section-sub">Watch quick video highlights that document his cheerful charisma.</p>
+      </div>
+      <div class="video-grid">
+        <div class="video-card glass reveal s1">
+          <div class="video-thumb">
+            <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+            <span class="video-duration">0:45</span>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">Learning to Walk</h3>
+            <span class="video-sub">14 Months Old Milestone</span>
+          </div>
+        </div>
+        <div class="video-card glass reveal s2">
+          <div class="video-thumb">
+            <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+            <span class="video-duration">1:12</span>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">Imaginative Play Session</h3>
+            <span class="video-sub">3 Years Old Fun</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cake-section">
+    <div class="container cake-wrap">
+      <div class="center reveal">
+        <span class="section-label">Interactive Joy</span>
+        <h2 class="section-title">Blow the Candles out! 🎂</h2>
+        <p class="section-sub">Tap the button to light up or trigger a beautiful blast of happy festive confetti pieces.</p>
+      </div>
+      <div class="cake-svg-wrap reveal s2">
+        <svg viewBox="0 0 100 100" width="100%" height="100%">
+          <ellipse cx="50" cy="85" rx="40" ry="10" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="1.5"/>
+          <rect x="20" y="55" width="60" height="25" rx="4" fill="var(--blue)"/>
+          <ellipse cx="50" cy="55" rx="30" ry="6" fill="#7BDEFF"/>
+          <path d="M20 55 q 5 6 10 0 q 5 6 10 0 q 5 6 10 0 q 5 6 10 0 q 5 6 10 0 q 5 6 10 0 v 6 h -60 z" fill="#FFF"/>
+          <rect x="48" y="32" width="4" height="18" fill="var(--yellow)"/>
+          <path class="candle-flame" d="M50 20 c-3 4-3 8 0 12 c3-4 3-8 0-12" fill="var(--orange)"/>
         </svg>
       </div>
-      <div class="photo-caption">
-        <p>Mohammad Darain's First Moments 🌙</p>
-        <span>The day that changed everything, forever</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MEMORY TIMELINE -->
-<section id="memories">
-  <div class="container">
-    <div class="center reveal">
-      <div class="section-label">Growing Up</div>
-      <h2 class="section-title">4 Years of Memories 💛</h2>
-      <p class="section-sub">Every six months brought a whole new Mohammad Darain — fuller of wonder, messier, louder, and more lovable than before.</p>
-    </div>
-
-    <div class="timeline" id="timeline-container">
-      <div class="timeline-spine"></div>
-      <div class="timeline-dot-travel"></div>
-
-      <!-- Entry 1 -->
-      <div class="timeline-item reveal">
-        <div class="tl-card glass">
-          <div class="tl-img shimmer" style="background:linear-gradient(135deg,#FFE4F0,#FFC8E0);">
-            <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-              <rect width="300" height="180" fill="transparent"/>
-              <circle cx="150" cy="75" r="38" fill="#FFDDE8"/>
-              <path d="M132 73 Q136 70 140 73" stroke="#FF6B9D" stroke-width="2" fill="none" stroke-linecap="round"/>
-              <path d="M160 73 Q164 70 168 73" stroke="#FF6B9D" stroke-width="2" fill="none" stroke-linecap="round"/>
-              <path d="M142 84 Q150 90 158 84" stroke="#FF6B9D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <ellipse cx="150" cy="78" rx="7" ry="4" fill="#FFB3D1" opacity="0.3"/>
-              <text x="60" y="155" font-size="28" text-anchor="middle">🌙</text>
-              <text x="150" y="160" font-size="28" text-anchor="middle">⭐</text>
-              <text x="240" y="155" font-size="28" text-anchor="middle">💤</text>
-            </svg>
-          </div>
-          <div class="tl-body">
-            <div class="tl-age">🍼 0 – 6 months</div>
-            <div class="tl-title">Newborn Magic</div>
-            <div class="tl-desc">First smiles, tiny curled fingers, sleepy snuggles, and the whole world falling in love with one small face.</div>
-            <div class="tl-tags">
-              <span class="tl-tag">First Smile 😊</span>
-              <span class="tl-tag">Midnight Feeds 🌙</span>
-              <span class="tl-tag">First Laugh 🎉</span>
-            </div>
-          </div>
-        </div>
-        <div class="timeline-center"><div class="tl-node"></div></div>
-        <div class="tl-empty"></div>
-      </div>
-
-      <!-- Entry 2 -->
-      <div class="timeline-item reveal">
-        <div class="tl-empty"></div>
-        <div class="timeline-center"><div class="tl-node" style="border-color:var(--blue);box-shadow:0 0 0 4px rgba(90,200,250,0.2)"></div></div>
-        <div class="tl-card glass">
-          <div class="tl-img shimmer" style="background:linear-gradient(135deg,#E8F4FF,#C8E8FF);">
-            <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-              <rect width="300" height="180" fill="transparent"/>
-              <rect x="80" y="60" width="30" height="30" rx="4" fill="#5AC8FA" opacity="0.8"/>
-              <rect x="120" y="50" width="30" height="40" rx="4" fill="#FF6B9D" opacity="0.8"/>
-              <rect x="160" y="70" width="30" height="20" rx="4" fill="#FFD60A" opacity="0.8"/>
-              <rect x="200" y="55" width="30" height="35" rx="4" fill="#34C759" opacity="0.8"/>
-              <circle cx="150" cy="130" r="25" fill="#FFDDE8"/>
-              <circle cx="140" cy="126" r="4" fill="#1C1C1E"/>
-              <circle cx="160" cy="126" r="4" fill="#1C1C1E"/>
-              <path d="M142 135 Q150 140 158 135" stroke="#FF6B9D" stroke-width="2" fill="none" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="tl-body">
-            <div class="tl-age" style="background:rgba(90,200,250,0.15);color:#0080AA;">🏗️ 6 – 12 months</div>
-            <div class="tl-title">Curious Explorer</div>
-            <div class="tl-desc">Crawling into every corner, knocking over towers, clapping with delight — the house was officially conquered.</div>
-            <div class="tl-tags">
-              <span class="tl-tag">First Crawl 🐛</span>
-              <span class="tl-tag">Sitting Up 🪑</span>
-              <span class="tl-tag">First Clap 👏</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Entry 3 -->
-      <div class="timeline-item reveal">
-        <div class="tl-card glass">
-          <div class="tl-img shimmer" style="background:linear-gradient(135deg,#FFF8E7,#FFE8A0);">
-            <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-              <rect width="300" height="180" fill="transparent"/>
-              <!-- Floor -->
-              <rect x="0" y="145" width="300" height="35" rx="0" fill="#FFD60A" opacity="0.3"/>
-              <!-- Child walking -->
-              <circle cx="150" cy="90" r="24" fill="#FFDDE8"/>
-              <circle cx="141" cy="86" r="4" fill="#1C1C1E"/>
-              <circle cx="159" cy="86" r="4" fill="#1C1C1E"/>
-              <path d="M143 97 Q150 103 157 97" stroke="#FF6B9D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <!-- Body -->
-              <rect x="138" y="114" width="24" height="30" rx="8" fill="#5AC8FA" opacity="0.8"/>
-              <!-- Legs -->
-              <line x1="144" y1="142" x2="138" y2="165" stroke="#FFDDE8" stroke-width="10" stroke-linecap="round"/>
-              <line x1="156" y1="142" x2="162" y2="165" stroke="#FFDDE8" stroke-width="10" stroke-linecap="round"/>
-              <!-- Stars of achievement -->
-              <text x="60" y="80" font-size="24">⭐</text>
-              <text x="220" y="80" font-size="24">✨</text>
-              <text x="30" y="140" font-size="16">👣</text>
-              <text x="250" y="140" font-size="16">👣</text>
-            </svg>
-          </div>
-          <div class="tl-body">
-            <div class="tl-age" style="background:rgba(255,214,10,0.15);color:#8B6914;">👣 12 – 18 months</div>
-            <div class="tl-title">First Steps!</div>
-            <div class="tl-desc">Walking, wobbling, tumbling, laughing — each step a tiny triumph that made everyone cheer and grab the camera.</div>
-            <div class="tl-tags">
-              <span class="tl-tag">First Steps 👶</span>
-              <span class="tl-tag">First Fall 😅</span>
-              <span class="tl-tag">First Run 💨</span>
-            </div>
-          </div>
-        </div>
-        <div class="timeline-center"><div class="tl-node" style="border-color:var(--yellow);box-shadow:0 0 0 4px rgba(255,214,10,0.2)"></div></div>
-        <div class="tl-empty"></div>
-      </div>
-
-      <!-- Entry 4 -->
-      <div class="timeline-item reveal">
-        <div class="tl-empty"></div>
-        <div class="timeline-center"><div class="tl-node" style="border-color:var(--green);box-shadow:0 0 0 4px rgba(52,199,89,0.2)"></div></div>
-        <div class="tl-card glass">
-          <div class="tl-img shimmer" style="background:linear-gradient(135deg,#F0FFF4,#C8F5D8);">
-            <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-              <rect width="300" height="180" fill="transparent"/>
-              <!-- Speech bubble -->
-              <ellipse cx="180" cy="60" rx="80" ry="40" fill="rgba(255,255,255,0.7)"/>
-              <polygon points="130,95 115,110 145,95" fill="rgba(255,255,255,0.7)"/>
-              <text x="180" y="55" text-anchor="middle" font-size="14" font-weight="bold" fill="#1C1C1E">Mama!</text>
-              <text x="180" y="72" text-anchor="middle" font-size="11" fill="#48484A">Why? Why? Why?</text>
-              <!-- Child face -->
-              <circle cx="100" cy="115" r="30" fill="#FFDDE8"/>
-              <circle cx="90" cy="110" r="5" fill="#1C1C1E"/>
-              <circle cx="110" cy="110" r="5" fill="#1C1C1E"/>
-              <path d="M91 123 Q100 130 109 123" stroke="#FF6B9D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <text x="50" y="50" font-size="18">💬</text>
-              <text x="230" y="130" font-size="18">🗣️</text>
-            </svg>
-          </div>
-          <div class="tl-body">
-            <div class="tl-age" style="background:rgba(52,199,89,0.15);color:#1a7a3c;">💬 18 – 24 months</div>
-            <div class="tl-title">The Little Talker</div>
-            <div class="tl-desc">First words blossomed into nonstop chatter. "Mama," "Dada," "Why?"—a vocabulary that grew faster than anyone expected.</div>
-            <div class="tl-tags">
-              <span class="tl-tag">First Word 💬</span>
-              <span class="tl-tag">Name Learnt 📛</span>
-              <span class="tl-tag">Endless Whys ❓</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Entry 5 -->
-      <div class="timeline-item reveal">
-        <div class="tl-card glass">
-          <div class="tl-img shimmer" style="background:linear-gradient(135deg,#F5E8FF,#E0C8FF);">
-            <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-              <!-- Sandbox scene -->
-              <rect x="50" y="130" width="200" height="40" rx="10" fill="#FFD60A" opacity="0.5"/>
-              <!-- Child playing -->
-              <circle cx="150" cy="95" r="28" fill="#FFDDE8"/>
-              <circle cx="140" cy="90" r="5" fill="#1C1C1E"/>
-              <circle cx="160" cy="90" r="5" fill="#1C1C1E"/>
-              <path d="M141 103 Q150 110 159 103" stroke="#FF6B9D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <!-- Arms/bucket -->
-              <line x1="130" y1="123" x2="100" y2="148" stroke="#FFDDE8" stroke-width="9" stroke-linecap="round"/>
-              <rect x="85" y="140" width="22" height="18" rx="4" fill="#BF5AF2" opacity="0.8"/>
-              <!-- Kite -->
-              <polygon points="220,30 240,60 220,90 200,60" fill="#FF6B9D" opacity="0.7"/>
-              <line x1="220" y1="90" x2="180" y2="150" stroke="#8E8E93" stroke-width="1.5"/>
-              <text x="30" y="60" font-size="20">🌞</text>
-            </svg>
-          </div>
-          <div class="tl-body">
-            <div class="tl-age" style="background:rgba(191,90,242,0.12);color:#7B2FA8;">🪁 2 Years</div>
-            <div class="tl-title">Wild & Playful</div>
-            <div class="tl-desc">Running wild through the garden, sandbox kingdoms, kites in the breeze — the world became Mohammad Darain's playground.</div>
-            <div class="tl-tags">
-              <span class="tl-tag">Potty Trained 🚽</span>
-              <span class="tl-tag">First Park 🌳</span>
-              <span class="tl-tag">Sandbox Pro 🏖️</span>
-            </div>
-          </div>
-        </div>
-        <div class="timeline-center"><div class="tl-node" style="border-color:var(--purple);box-shadow:0 0 0 4px rgba(191,90,242,0.2)"></div></div>
-        <div class="tl-empty"></div>
-      </div>
-
-      <!-- Entry 6 -->
-      <div class="timeline-item reveal">
-        <div class="tl-empty"></div>
-        <div class="timeline-center"><div class="tl-node" style="border-color:var(--orange);box-shadow:0 0 0 4px rgba(255,159,10,0.2)"></div></div>
-        <div class="tl-card glass">
-          <div class="tl-img shimmer" style="background:linear-gradient(135deg,#FFF3E0,#FFD8A0);">
-            <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-              <!-- Drawing/canvas -->
-              <rect x="60" y="40" width="180" height="110" rx="8" fill="white" opacity="0.8"/>
-              <!-- Scribble drawings -->
-              <circle cx="100" cy="80" r="20" fill="#FF6B9D" opacity="0.5"/>
-              <rect x="140" y="60" width="40" height="50" rx="4" fill="#5AC8FA" opacity="0.5"/>
-              <path d="M180 90 Q200 70 220 90" fill="#FFD60A" opacity="0.6"/>
-              <!-- Paintbrush -->
-              <line x1="240" y1="40" x2="200" y2="120" stroke="#8B6914" stroke-width="5" stroke-linecap="round"/>
-              <ellipse cx="198" cy="122" rx="8" ry="4" fill="#FF6B9D" opacity="0.8"/>
-              <!-- Child artist -->
-              <circle cx="90" cy="150" r="22" fill="#FFDDE8"/>
-              <text x="60" y="175" font-size="14">🎨</text>
-              <text x="220" y="160" font-size="18">✏️</text>
-            </svg>
-          </div>
-          <div class="tl-body">
-            <div class="tl-age" style="background:rgba(255,159,10,0.15);color:#8B4600;">🎨 3 Years</div>
-            <div class="tl-title">Little Creator</div>
-            <div class="tl-desc">Drawings that told stories only he could explain, imaginary worlds with their own rules, characters, and daily dramas.</div>
-            <div class="tl-tags">
-              <span class="tl-tag">First Drawing 🖍️</span>
-              <span class="tl-tag">Storyteller 📖</span>
-              <span class="tl-tag">Imaginative 🌈</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Entry 7 -->
-      <div class="timeline-item reveal">
-        <div class="tl-card glass">
-          <div class="tl-img shimmer" style="background:linear-gradient(135deg,#E8F4FF,#D0EBFF);">
-            <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-              <!-- Playground slide -->
-              <rect x="60" y="60" width="16" height="90" rx="4" fill="#8E8E93" opacity="0.6"/>
-              <rect x="220" y="100" width="16" height="50" rx="4" fill="#8E8E93" opacity="0.6"/>
-              <path d="M76 65 L220 105" stroke="#FF6B9D" stroke-width="10" stroke-linecap="round"/>
-              <!-- Ground -->
-              <rect x="0" y="148" width="300" height="32" rx="0" fill="#34C759" opacity="0.25"/>
-              <!-- Two children -->
-              <circle cx="100" cy="120" r="20" fill="#FFDDE8"/>
-              <circle cx="190" cy="120" r="20" fill="#FFD8A0"/>
-              <line x1="118" y1="128" x2="172" y2="128" stroke="#FF6B9D" stroke-width="3" stroke-linecap="round"/>
-              <text x="130" y="120" text-anchor="middle" font-size="16">🤝</text>
-              <text x="50" y="50" font-size="18">☁️</text>
-              <text x="220" y="55" font-size="18">☁️</text>
-            </svg>
-          </div>
-          <div class="tl-body">
-            <div class="tl-age" style="background:rgba(90,200,250,0.15);color:#0080AA;">🛝 3.5 Years</div>
-            <div class="tl-title">Social Butterfly</div>
-            <div class="tl-desc">Best friends at the playground, sharing snacks, inventing games — Mohammad Darain discovered that everything is better with a friend.</div>
-            <div class="tl-tags">
-              <span class="tl-tag">Best Friend 👫</span>
-              <span class="tl-tag">Sharing 🍎</span>
-              <span class="tl-tag">Playdate Pro 🎮</span>
-            </div>
-          </div>
-        </div>
-        <div class="timeline-center"><div class="tl-node" style="border-color:var(--blue);box-shadow:0 0 0 4px rgba(90,200,250,0.2)"></div></div>
-        <div class="tl-empty"></div>
-      </div>
-
-      <!-- Entry 8 -->
-      <div class="timeline-item reveal">
-        <div class="tl-empty"></div>
-        <div class="timeline-center"><div class="tl-node" style="border-color:var(--yellow);box-shadow:0 0 0 4px rgba(255,214,10,0.25);background:var(--yellow)"></div></div>
-        <div class="tl-card glass" style="border-color:rgba(255,214,10,0.35);">
-          <div class="tl-img shimmer" style="background:linear-gradient(135deg,#FFF8E7,#FFE066);">
-            <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-              <!-- Big 4 -->
-              <text x="150" y="110" text-anchor="middle" font-family="Nunito,sans-serif" font-size="100" font-weight="900" fill="rgba(255,214,10,0.3)">4</text>
-              <!-- Crown -->
-              <polygon points="100,70 120,50 140,65 160,45 180,65 200,50 220,70 210,90 90,90" fill="#FFD60A" opacity="0.8"/>
-              <circle cx="100" cy="68" r="5" fill="#FF6B9D"/>
-              <circle cx="140" cy="63" r="5" fill="#5AC8FA"/>
-              <circle cx="160" cy="43" r="5" fill="#34C759"/>
-              <circle cx="200" cy="48" r="5" fill="#BF5AF2"/>
-              <circle cx="220" cy="68" r="5" fill="#FF6B9D"/>
-              <text x="150" y="155" text-anchor="middle" font-size="22">🎉🎊🎈</text>
-            </svg>
-          </div>
-          <div class="tl-body">
-            <div class="tl-age" style="background:rgba(255,214,10,0.2);color:#8B6914;">👑 4 Years — Today!</div>
-            <div class="tl-title">The Star of Today ⭐</div>
-            <div class="tl-desc">Four full years of wonder, mischief, belly laughs, and pure joy. The whole world is brighter because Mohammad Darain is in it.</div>
-            <div class="tl-tags">
-              <span class="tl-tag">Birthday Boy 🎂</span>
-              <span class="tl-tag">Officially 4 👑</span>
-              <span class="tl-tag">Most Loved 💖</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /timeline -->
-  </div>
-</section>
-
-<!-- MILESTONES -->
-<section id="milestones">
-  <div class="container">
-    <div class="center reveal">
-      <div class="section-label">Achievements</div>
-      <h2 class="section-title">4 Years of Firsts 🏆</h2>
-      <p class="section-sub">Every milestone, big or tiny, deserves its own trophy. Here are Mohammad Darain's greatest hits.</p>
-    </div>
-    <div class="milestones-grid">
-      <!-- 12 badges -->
-      <div class="milestone-card glass reveal s1" onclick="this.classList.toggle('flipped')">
-        <div class="milestone-inner">
-          <div class="milestone-front">
-            <div class="milestone-glow" style="background:rgba(255,107,157,0.15);--c1:#FF6B9D;--c2:#FF8FB3;">😊</div>
-            <div class="milestone-name">First Smile</div>
-            <div class="milestone-sub">3 weeks old</div>
-          </div>
-          <div class="milestone-back">That first gummy smile at 3 weeks melted every heart in the room instantly. 💕</div>
-        </div>
-      </div>
-      <div class="milestone-card glass reveal s2" onclick="this.classList.toggle('flipped')">
-        <div class="milestone-inner">
-          <div class="milestone-front">
-            <div class="milestone-glow" style="background:rgba(90,200,250,0.15);--c1:#5AC8FA;--c2:#7DD8FF;">💬</div>
-            <div class="milestone-name">First Word</div>
-            <div class="milestone-sub">"Mama!" — 11 months</div>
-          </div>
-          <div class="milestone-back">The whole family came running when "Mama!" rang out for the first time. Pure magic! 🎉</div>
-        </div>
-      </div>
-      <div class="milestone-card glass reveal s3" onclick="this.classList.toggle('flipped')">
-        <div class="milestone-inner">
-          <div class="milestone-front">
-            <div class="milestone-glow" style="background:rgba(255,214,10,0.15);--c1:#FFD60A;--c2:#FFE066;">👣</div>
-            <div class="milestone-name">First Steps</div>
-            <div class="milestone-sub">13 months old</div>
-          </div>
-          <div class="milestone-back">Three wobbly steps then a tumble into Mama's arms. Everyone cried happy tears. 🥹</div>
-        </div>
-      </div>
-      <div class="milestone-card glass reveal s4" onclick="this.classList.toggle('flipped')">
-        <div class="milestone-inner">
-          <div class="milestone-front">
-            <div class="milestone-glow" style="background:rgba(52,199,89,0.15);--c1:#34C759;--c2:#5FD97A;">🎂</div>
-            <div class="milestone-name">First Birthday</div>
-            <div class="milestone-sub">Cake everywhere!</div>
-          </div>
-          <div class="milestone-back">Cake in his hair, on the ceiling, basically everywhere except his mouth. A masterpiece. 😂</div>
-        </div>
-      </div>
-      <div class="milestone-card glass reveal s5" onclick="this.classList.toggle('flipped')">
-        <div class="milestone-inner">
-          <div class="milestone-front">
-            <div class="milestone-glow" style="background:rgba(191,90,242,0.15);--c1:#BF5AF2;--c2:#D47FFF;">👫</div>
-            <div class="milestone-name">First Friend</div>
-            <div class="milestone-sub">Playgroup BFF</div>
-          </div>
-          <div class="milestone-back">Held hands with his first friend for five minutes straight, then shared his snack. A natural. 🥰</div>
-        </div>
-      </div>
-      <div class="milestone-card glass reveal s6" onclick="this.classList.toggle('flipped')">
-        <div class="milestone-inner">
-          <div class="milestone-front">
-            <div class="milestone-glow" style="background:rgba(255,159,10,0.15);--c1:#FF9F0A;--c2:#FFBF40;">🥄</div>
-            <div class="milestone-name">First Meal</div>
-            <div class="milestone-sub">Mashed banana 🍌</div>
-          </div>
-          <div class="milestone-back">Half went in, half became face paint. That look of pure confusion was priceless. 😄</div>
-        </div>
-      </div>
-      <div class="milestone-card glass reveal s7" onclick="this.classList.toggle('flipped')">
-        <div class="milestone-inner">
-          <div class="milestone-front">
-            <div class="milestone-glow" style="background:rgba(255,107,157,0.15);--c1:#FF6B9D;--c2:#FF8FB3;">✂️</div>
-            <div class="milestone-name">First Haircut</div>
-            <div class="milestone-sub">So brave!</div>
-          </div>
-          <div class="milestone-back">Sat still for exactly 90 seconds then became a tiny escape artist. The stylist was impressed. ✨</div>
-        </div>
-      </div>
-      <div class="milestone-card glass reveal s8" onclick="this.classList.toggle('flipped')">
-        <div class="milestone-inner">
-          <div class="milestone-front">
-            <div class="milestone-glow" style="background:rgba(90,200,250,0.15);--c1:#5AC8FA;--c2:#7DD8FF;">🖍️</div>
-            <div class="milestone-name">First Drawing</div>
-            <div class="milestone-sub">"It's a dinosaur!"</div>
-          </div>
-          <div class="milestone-back">A swirly circle on the wall. When asked what it was — "Dada!" — it immediately went in a frame. 🎨</div>
-        </div>
-      </div>
-      <div class="milestone-card glass reveal s9" onclick="this.classList.toggle('flipped')">
-        <div class="milestone-inner">
-          <div class="milestone-front">
-            <div class="milestone-glow" style="background:rgba(52,199,89,0.15);--c1:#34C759;--c2:#5FD97A;">🛝</div>
-            <div class="milestone-name">First Playground</div>
-            <div class="milestone-sub">Slide master</div>
-          </div>
-          <div class="milestone-back">Went down the slide 47 times in a row. By the end, even the parents needed a nap. 😴</div>
-        </div>
-      </div>
-      <div class="milestone-card glass reveal s10" onclick="this.classList.toggle('flipped')">
-        <div class="milestone-inner">
-          <div class="milestone-front">
-            <div class="milestone-glow" style="background:rgba(191,90,242,0.15);--c1:#BF5AF2;--c2:#D47FFF;">📚</div>
-            <div class="milestone-name">First Book</div>
-            <div class="milestone-sub">Read 50+ times</div>
-          </div>
-          <div class="milestone-back">The Very Hungry Caterpillar was requested so many times the pages eventually fell out. Worth it. 📖</div>
-        </div>
-      </div>
-      <div class="milestone-card glass reveal s11" onclick="this.classList.toggle('flipped')">
-        <div class="milestone-inner">
-          <div class="milestone-front">
-            <div class="milestone-glow" style="background:rgba(255,214,10,0.15);--c1:#FFD60A;--c2:#FFE066;">🎵</div>
-            <div class="milestone-name">First Song</div>
-            <div class="milestone-sub">Full performance</div>
-          </div>
-          <div class="milestone-back">Performed "Wheels on the Bus" with full choreography at his cousin's birthday. Standing ovation! 🎤</div>
-        </div>
-      </div>
-      <div class="milestone-card glass reveal s12" onclick="this.classList.toggle('flipped')">
-        <div class="milestone-inner">
-          <div class="milestone-front">
-            <div class="milestone-glow" style="background:rgba(255,159,10,0.15);--c1:#FF9F0A;--c2:#FFBF40;">😈</div>
-            <div class="milestone-name">First Mischief</div>
-            <div class="milestone-sub">Legend status</div>
-          </div>
-          <div class="milestone-back">Hid Dada's phone in the freezer "to keep it cold." It was found three days later. A certified legend. 🧊</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery">
-  <div class="container">
-    <div class="center reveal">
-      <div class="section-label">Photo Album</div>
-      <h2 class="section-title">Moments Captured 📸</h2>
-      <p class="section-sub">Every click of the camera caught something irreplaceable — add your own photos here and relive it all.</p>
-    </div>
-
-    <div class="gallery-filters reveal">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="1">Year 1</button>
-      <button class="filter-btn" data-filter="2">Year 2</button>
-      <button class="filter-btn" data-filter="3">Year 3</button>
-      <button class="filter-btn" data-filter="4">Year 4</button>
-    </div>
-
-    <div class="gallery-grid" id="gallery-grid">
-
-      <!-- Card 1 -->
-      <div class="gallery-item reveal s1" data-year="1" data-index="0">
-        <div class="gallery-scene shimmer" style="background:linear-gradient(135deg,#FFE4F0,#FFC8E0);height:260px;">
-          <svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;">
-            <!-- Crib scene -->
-            <rect x="40" y="80" width="200" height="120" rx="16" fill="rgba(255,255,255,0.4)"/>
-            <circle cx="140" cy="130" r="40" fill="#FFDDE8"/>
-            <circle cx="127" cy="124" r="6" fill="#1C1C1E" opacity="0.6"/>
-            <circle cx="153" cy="124" r="6" fill="#1C1C1E" opacity="0.6"/>
-            <path d="M128 140 Q140 148 152 140" stroke="#FF6B9D" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <text x="140" y="220" text-anchor="middle" font-size="28">🌙⭐💤</text>
-          </svg>
-        </div>
-        <div class="year-tag">Year 1</div>
-        <div class="gallery-overlay"><p>Sweet Slumber</p><span>Mohammad Darain's first weeks at home</span></div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="gallery-item reveal s2" data-year="1" data-index="1">
-        <div class="gallery-scene shimmer" style="background:linear-gradient(135deg,#E8F4FF,#C8DFFF);height:200px;">
-          <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;">
-            <rect x="30" y="140" width="220" height="40" rx="8" fill="rgba(255,255,255,0.3)"/>
-            <rect x="70" y="80" width="30" height="30" rx="5" fill="#5AC8FA" opacity="0.8"/>
-            <rect x="115" y="65" width="50" height="45" rx="5" fill="#FF6B9D" opacity="0.7"/>
-            <rect x="180" y="85" width="30" height="25" rx="5" fill="#FFD60A" opacity="0.8"/>
-            <circle cx="140" cy="148" r="22" fill="#FFDDE8"/>
-            <circle cx="131" cy="144" r="4" fill="#1C1C1E" opacity="0.6"/>
-            <circle cx="149" cy="144" r="4" fill="#1C1C1E" opacity="0.6"/>
-            <path d="M132 153 Q140 159 148 153" stroke="#FF6B9D" stroke-width="2" fill="none" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="year-tag">Year 1</div>
-        <div class="gallery-overlay"><p>Block Tower Builder</p><span>Concentration level: 100%</span></div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="gallery-item reveal s3" data-year="2" data-index="2">
-        <div class="gallery-scene shimmer" style="background:linear-gradient(135deg,#FFF8E7,#FFE8A0);height:300px;">
-          <svg viewBox="0 0 280 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;">
-            <!-- Sunny sky -->
-            <circle cx="230" cy="50" r="30" fill="#FFD60A" opacity="0.6"/>
-            <rect x="0" y="220" width="280" height="80" rx="0" fill="#34C759" opacity="0.3"/>
-            <!-- Kite -->
-            <polygon points="140,60 160,90 140,120 120,90" fill="#FF6B9D" opacity="0.75"/>
-            <line x1="140" y1="120" x2="120" y2="200" stroke="#8E8E93" stroke-width="1.5"/>
-            <!-- Child running -->
-            <circle cx="100" cy="205" r="26" fill="#FFDDE8"/>
-            <circle cx="91" cy="200" r="5" fill="#1C1C1E" opacity="0.6"/>
-            <circle cx="109" cy="200" r="5" fill="#1C1C1E" opacity="0.6"/>
-            <path d="M91 212 Q100 218 109 212" stroke="#FF6B9D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-            <text x="140" y="270" text-anchor="middle" font-size="22">🌤️🌈</text>
-          </svg>
-        </div>
-        <div class="year-tag">Year 2</div>
-        <div class="gallery-overlay"><p>Kite Flying Day</p><span>Park adventures with Dada</span></div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="gallery-item reveal s4" data-year="2" data-index="3">
-        <div class="gallery-scene shimmer" style="background:linear-gradient(135deg,#F5E8FF,#E0BFFF);height:230px;">
-          <svg viewBox="0 0 280 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;">
-            <!-- Beach/sandbox -->
-            <rect x="0" y="160" width="280" height="70" rx="0" fill="#FFD60A" opacity="0.4"/>
-            <!-- Castle -->
-            <rect x="90" y="120" width="100" height="50" rx="4" fill="#FFB347" opacity="0.7"/>
-            <rect x="85" y="105" width="25" height="25" rx="3" fill="#FFB347" opacity="0.8"/>
-            <rect x="128" y="100" width="24" height="30" rx="3" fill="#FFB347" opacity="0.8"/>
-            <rect x="170" y="105" width="25" height="25" rx="3" fill="#FFB347" opacity="0.8"/>
-            <!-- Child -->
-            <circle cx="140" cy="175" r="20" fill="#FFDDE8"/>
-            <text x="70" y="55" font-size="20">🦀</text>
-            <text x="200" y="80" font-size="18">🐚</text>
-            <text x="140" y="210" text-anchor="middle" font-size="18">🏖️⛱️</text>
-          </svg>
-        </div>
-        <div class="year-tag">Year 2</div>
-        <div class="gallery-overlay"><p>Sandcastle King</p><span>Beach day architect</span></div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="gallery-item reveal s5" data-year="3" data-index="4">
-        <div class="gallery-scene shimmer" style="background:linear-gradient(135deg,#F0FFF4,#C8F5D8);height:280px;">
-          <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;">
-            <!-- Book -->
-            <rect x="60" y="80" width="160" height="110" rx="8" fill="white" opacity="0.85"/>
-            <line x1="140" y1="80" x2="140" y2="190" stroke="#8E8E93" stroke-width="2"/>
-            <!-- Simple illustration in book -->
-            <circle cx="100" cy="130" r="22" fill="#FF6B9D" opacity="0.4"/>
-            <rect x="160" y="110" width="35" height="45" rx="5" fill="#5AC8FA" opacity="0.4"/>
-            <!-- Child reading -->
-            <circle cx="140" cy="220" r="28" fill="#FFDDE8"/>
-            <circle cx="130" cy="215" r="5" fill="#1C1C1E" opacity="0.6"/>
-            <circle cx="150" cy="215" r="5" fill="#1C1C1E" opacity="0.6"/>
-            <path d="M131 226 Q140 232 149 226" stroke="#FF6B9D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-            <text x="50" y="65" font-size="16">📚</text>
-            <text x="210" y="65" font-size="16">🔖</text>
-          </svg>
-        </div>
-        <div class="year-tag">Year 3</div>
-        <div class="gallery-overlay"><p>Bookworm Hours</p><span>Storytime every night</span></div>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="gallery-item reveal s6" data-year="3" data-index="5">
-        <div class="gallery-scene shimmer" style="background:linear-gradient(135deg,#FFF3E0,#FFD8A0);height:220px;">
-          <svg viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;">
-            <!-- Canvas -->
-            <rect x="50" y="30" width="180" height="120" rx="6" fill="white" opacity="0.9"/>
-            <!-- Painting scribbles -->
-            <circle cx="100" cy="80" r="25" fill="#FF6B9D" opacity="0.5"/>
-            <circle cx="150" cy="70" r="20" fill="#5AC8FA" opacity="0.5"/>
-            <circle cx="195" cy="85" r="18" fill="#FFD60A" opacity="0.5"/>
-            <path d="M80 110 Q140 95 200 115" stroke="#34C759" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.6"/>
-            <!-- Paint smudges on child's face -->
-            <circle cx="140" cy="178" r="24" fill="#FFDDE8"/>
-            <circle cx="128" cy="172" r="5" fill="#1C1C1E" opacity="0.6"/>
-            <circle cx="152" cy="172" r="5" fill="#1C1C1E" opacity="0.6"/>
-            <circle cx="124" cy="180" r="6" fill="#FF6B9D" opacity="0.4"/>
-            <circle cx="156" cy="180" r="6" fill="#5AC8FA" opacity="0.4"/>
-            <text x="220" y="160" font-size="18">🖌️</text>
-          </svg>
-        </div>
-        <div class="year-tag">Year 3</div>
-        <div class="gallery-overlay"><p>Art Class Masterpiece</p><span>More paint on face than canvas</span></div>
-      </div>
-
-      <!-- Card 7 -->
-      <div class="gallery-item reveal s7" data-year="4" data-index="6">
-        <div class="gallery-scene shimmer" style="background:linear-gradient(135deg,#FFE4F0,#FFC0D0);height:270px;">
-          <svg viewBox="0 0 280 270" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;">
-            <!-- Birthday cake big -->
-            <rect x="70" y="140" width="140" height="80" rx="10" fill="#FF8FB3" opacity="0.8"/>
-            <rect x="80" y="110" width="120" height="40" rx="8" fill="#FFB3CC" opacity="0.8"/>
-            <!-- Frosting -->
-            <path d="M70 140 Q80 125 90 140 Q100 125 110 140 Q120 125 130 140 Q140 125 150 140 Q160 125 170 140 Q180 125 190 140 Q200 125 210 140" fill="#FFF0F5" opacity="0.9"/>
-            <!-- Candles -->
-            <rect x="100" y="88" width="8" height="24" rx="3" fill="#FFD60A" opacity="0.9"/>
-            <rect x="120" y="84" width="8" height="28" rx="3" fill="#5AC8FA" opacity="0.9"/>
-            <rect x="140" y="88" width="8" height="24" rx="3" fill="#34C759" opacity="0.9"/>
-            <rect x="160" y="84" width="8" height="28" rx="3" fill="#BF5AF2" opacity="0.9"/>
-            <!-- Flames -->
-            <ellipse cx="104" cy="85" rx="5" ry="7" fill="#FF9F0A" opacity="0.9"/>
-            <ellipse cx="124" cy="81" rx="5" ry="7" fill="#FF9F0A" opacity="0.9"/>
-            <ellipse cx="144" cy="85" rx="5" ry="7" fill="#FF9F0A" opacity="0.9"/>
-            <ellipse cx="164" cy="81" rx="5" ry="7" fill="#FF9F0A" opacity="0.9"/>
-            <!-- "4" on cake -->
-            <text x="140" y="175" text-anchor="middle" font-family="Nunito,sans-serif" font-size="32" font-weight="900" fill="white">4</text>
-            <text x="140" y="245" text-anchor="middle" font-size="22">🎉🎊🎈</text>
-          </svg>
-        </div>
-        <div class="year-tag">Year 4</div>
-        <div class="gallery-overlay"><p>The Big Birthday Cake</p><span>4 candles, 4 wishes</span></div>
-      </div>
-
-      <!-- Card 8 -->
-      <div class="gallery-item reveal s8" data-year="1" data-index="7">
-        <div class="gallery-scene shimmer" style="background:linear-gradient(135deg,#E8F4FF,#BFE0FF);height:210px;">
-          <svg viewBox="0 0 280 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;">
-            <!-- Family silhouette -->
-            <rect x="0" y="160" width="280" height="50" rx="0" fill="#34C759" opacity="0.2"/>
-            <!-- Dad -->
-            <circle cx="95" cy="95" r="30" fill="#5AC8FA" opacity="0.6"/>
-            <rect x="78" y="123" width="34" height="40" rx="8" fill="#5AC8FA" opacity="0.5"/>
-            <!-- Mom -->
-            <circle cx="185" cy="98" r="28" fill="#FF6B9D" opacity="0.6"/>
-            <rect x="170" y="124" width="30" height="38" rx="10" fill="#FF6B9D" opacity="0.5"/>
-            <!-- Baby Mohammad Darain in middle, held up -->
-            <circle cx="140" cy="80" r="22" fill="#FFDDE8"/>
-            <circle cx="131" cy="76" r="4" fill="#1C1C1E" opacity="0.6"/>
-            <circle cx="149" cy="76" r="4" fill="#1C1C1E" opacity="0.6"/>
-            <path d="M132 86 Q140 92 148 86" stroke="#FF6B9D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-            <!-- Hands holding -->
-            <line x1="115" y1="100" x2="130" y2="90" stroke="#5AC8FA" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
-            <line x1="165" y1="100" x2="150" y2="90" stroke="#FF6B9D" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
-            <text x="140" y="190" text-anchor="middle" font-size="18">👨‍👩‍👦</text>
-          </svg>
-        </div>
-        <div class="year-tag">Year 1</div>
-        <div class="gallery-overlay"><p>Family Portrait</p><span>Our forever team</span></div>
-      </div>
-
-      <!-- Card 9 -->
-      <div class="gallery-item reveal s9" data-year="3" data-index="8">
-        <div class="gallery-scene shimmer" style="background:linear-gradient(135deg,#F5E8FF,#DFC8FF);height:250px;">
-          <svg viewBox="0 0 280 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;">
-            <!-- Ice cream -->
-            <rect x="120" y="110" width="40" height="70" rx="5" fill="#BF5AF2" opacity="0.7"/>
-            <ellipse cx="140" cy="110" rx="30" ry="40" fill="#FFB3CC" opacity="0.85"/>
-            <ellipse cx="140" cy="78" rx="22" ry="30" fill="#5AC8FA" opacity="0.8"/>
-            <ellipse cx="140" cy="52" rx="16" ry="22" fill="#FFD60A" opacity="0.8"/>
-            <!-- Cherry -->
-            <circle cx="140" cy="33" r="8" fill="#FF3B30" opacity="0.8"/>
-            <line x1="140" y1="33" x2="155" y2="18" stroke="#34C759" stroke-width="2" opacity="0.8"/>
-            <!-- Child's happy face -->
-            <circle cx="140" cy="195" r="28" fill="#FFDDE8"/>
-            <circle cx="129" cy="190" r="5" fill="#1C1C1E" opacity="0.6"/>
-            <circle cx="151" cy="190" r="5" fill="#1C1C1E" opacity="0.6"/>
-            <path d="M129 202 Q140 212 151 202" stroke="#FF6B9D" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <circle cx="123" cy="197" r="7" fill="#FF6B9D" opacity="0.2"/>
-            <circle cx="157" cy="197" r="7" fill="#FF6B9D" opacity="0.2"/>
-          </svg>
-        </div>
-        <div class="year-tag">Year 3</div>
-        <div class="gallery-overlay"><p>Ice Cream Happiness</p><span>Triple scoop kind of day 🍦</span></div>
-      </div>
-
-      <!-- Card 10 -->
-      <div class="gallery-item reveal s10" data-year="4" data-index="9">
-        <div class="gallery-scene shimmer" style="background:linear-gradient(135deg,#FFF8E7,#FFE566);height:240px;">
-          <svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;">
-            <!-- Playground -->
-            <rect x="20" y="160" width="240" height="60" rx="0" fill="#34C759" opacity="0.25"/>
-            <!-- Slide -->
-            <rect x="30" y="70" width="14" height="100" rx="4" fill="#8E8E93" opacity="0.5"/>
-            <path d="M44 75 L160 160" stroke="#FF6B9D" stroke-width="12" stroke-linecap="round" opacity="0.7"/>
-            <!-- Swings -->
-            <line x1="190" y1="40" x2="190" y2="120" stroke="#8E8E93" stroke-width="2"/>
-            <line x1="230" y1="40" x2="230" y2="120" stroke="#8E8E93" stroke-width="2"/>
-            <line x1="185" y1="40" x2="235" y2="40" stroke="#8E8E93" stroke-width="3"/>
-            <rect x="183" y="110" width="14" height="6" rx="2" fill="#5AC8FA" opacity="0.7"/>
-            <!-- Child on swing -->
-            <circle cx="190" cy="98" r="16" fill="#FFDDE8"/>
-            <text x="140" y="210" text-anchor="middle" font-size="20">🌞🛝🎠</text>
-          </svg>
-        </div>
-        <div class="year-tag">Year 4</div>
-        <div class="gallery-overlay"><p>Playground Champion</p><span>Slide record: 47 times</span></div>
-      </div>
-
-      <!-- Card 11 -->
-      <div class="gallery-item reveal s11" data-year="2" data-index="10">
-        <div class="gallery-scene shimmer" style="background:linear-gradient(135deg,#E8FFFA,#B8F5E8);height:230px;">
-          <svg viewBox="0 0 280 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;">
-            <!-- Bathtub -->
-            <ellipse cx="140" cy="150" rx="100" ry="50" fill="#5AC8FA" opacity="0.35"/>
-            <rect x="40" y="120" width="200" height="70" rx="20" fill="#5AC8FA" opacity="0.25"/>
-            <!-- Bubbles -->
-            <circle cx="90" cy="100" r="12" fill="rgba(255,255,255,0.7)"/>
-            <circle cx="120" cy="80" r="18" fill="rgba(255,255,255,0.65)"/>
-            <circle cx="160" cy="90" r="14" fill="rgba(255,255,255,0.7)"/>
-            <circle cx="195" cy="75" r="10" fill="rgba(255,255,255,0.65)"/>
-            <circle cx="70" cy="70" r="8" fill="rgba(255,255,255,0.6)"/>
-            <!-- Child in tub -->
-            <circle cx="140" cy="130" r="26" fill="#FFDDE8"/>
-            <circle cx="130" cy="125" r="5" fill="#1C1C1E" opacity="0.6"/>
-            <circle cx="150" cy="125" r="5" fill="#1C1C1E" opacity="0.6"/>
-            <path d="M130 137 Q140 144 150 137" stroke="#FF6B9D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-            <!-- Rubber duck -->
-            <ellipse cx="200" cy="145" rx="18" ry="12" fill="#FFD60A" opacity="0.9"/>
-            <ellipse cx="208" cy="138" rx="10" ry="8" fill="#FFD60A" opacity="0.9"/>
-            <ellipse cx="213" cy="138" rx="5" ry="3" fill="#FF9F0A" opacity="0.9"/>
-          </svg>
-        </div>
-        <div class="year-tag">Year 2</div>
-        <div class="gallery-overlay"><p>Bubble Bath Fun</p><span>Rubber ducky included</span></div>
-      </div>
-
-      <!-- Card 12 -->
-      <div class="gallery-item reveal s12" data-year="4" data-index="11">
-        <div class="gallery-scene shimmer" style="background:linear-gradient(135deg,#FFF0F5,#FFD6E8);height:260px;">
-          <svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;">
-            <!-- Party scene -->
-            <text x="30" y="50" font-size="24">🎈</text>
-            <text x="220" y="50" font-size="24">🎈</text>
-            <text x="125" y="35" font-size="24">🎊</text>
-            <!-- Streamers -->
-            <path d="M0 0 Q50 60 30 120" stroke="#FF6B9D" stroke-width="3" fill="none" opacity="0.4"/>
-            <path d="M280 0 Q230 60 250 120" stroke="#5AC8FA" stroke-width="3" fill="none" opacity="0.4"/>
-            <path d="M140 0 Q180 50 160 100" stroke="#FFD60A" stroke-width="3" fill="none" opacity="0.4"/>
-            <!-- Party hat child -->
-            <polygon points="140,60 160,100 120,100" fill="#BF5AF2" opacity="0.8"/>
-            <circle cx="140" cy="115" r="32" fill="#FFDDE8"/>
-            <circle cx="128" cy="109" r="6" fill="#1C1C1E" opacity="0.6"/>
-            <circle cx="152" cy="109" r="6" fill="#1C1C1E" opacity="0.6"/>
-            <path d="M127 124 Q140 136 153 124" stroke="#FF6B9D" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-            <circle cx="122" cy="118" r="9" fill="#FF6B9D" opacity="0.2"/>
-            <circle cx="158" cy="118" r="9" fill="#FF6B9D" opacity="0.2"/>
-            <text x="140" y="225" text-anchor="middle" font-size="24">🎂🎉🥳</text>
-          </svg>
-        </div>
-        <div class="year-tag">Year 4</div>
-        <div class="gallery-overlay"><p>Birthday Party Time!</p><span>The happiest 4-year-old alive</span></div>
-      </div>
-
-    </div><!-- /gallery-grid -->
-  </div>
-</section>
-
-<!-- FUN FACTS CAROUSEL -->
-<section id="funfacts">
-  <div class="container">
-    <div class="center reveal">
-      <div class="section-label">Just For Fun</div>
-      <h2 class="section-title">Mohammad Darain By The Numbers 🔢</h2>
-    </div>
-    <div class="carousel-wrap reveal">
-      <div class="carousel-track" id="carousel-track">
-        <div class="fact-card glass">
-          <span class="fact-emoji">❓</span>
-          <div class="fact-stat">4,732</div>
-          <div class="fact-label">Times asked "But WHY?"<br><small style="color:var(--text-tertiary)">Just this month</small></div>
-        </div>
-        <div class="fact-card glass">
-          <span class="fact-emoji">🍦</span>
-          <div class="fact-stat">∞</div>
-          <div class="fact-label">Ice creams requested<br><small style="color:var(--text-tertiary)">Daily, without fail</small></div>
-        </div>
-        <div class="fact-card glass">
-          <span class="fact-emoji">🤗</span>
-          <div class="fact-stat">10,000+</div>
-          <div class="fact-label">Hugs given & received<br><small style="color:var(--text-tertiary)">Never enough</small></div>
-        </div>
-        <div class="fact-card glass">
-          <span class="fact-emoji">😴</span>
-          <div class="fact-stat">Expert</div>
-          <div class="fact-label">Bedtime negotiations<br><small style="color:var(--text-tertiary)">"5 more minutes" × 12</small></div>
-        </div>
-        <div class="fact-card glass">
-          <span class="fact-emoji">😂</span>
-          <div class="fact-stat">1,460</div>
-          <div class="fact-label">Days of pure joy<br><small style="color:var(--text-tertiary)">Four whole years</small></div>
-        </div>
-        <div class="fact-card glass">
-          <span class="fact-emoji">💖</span>
-          <div class="fact-stat">∞</div>
-          <div class="fact-label">Love in the room<br><small style="color:var(--text-tertiary)">Whenever he walks in</small></div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-dots" id="carousel-dots"></div>
-  </div>
-</section>
-
-<!-- VIDEO SECTION -->
-<section id="videos">
-  <div class="container">
-    <div class="center reveal">
-      <div class="section-label">Highlights Reel</div>
-      <h2 class="section-title">Relive the Magic 🎬</h2>
-      <p class="section-sub">Three unforgettable chapters — ready to watch whenever you need a smile.</p>
-    </div>
-    <div class="video-grid">
-      <div class="video-card glass reveal s1">
-        <div class="video-thumb">
-          <svg viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
-            <defs><radialGradient id="vg1" cx="50%" cy="50%"><stop offset="0%" stop-color="#1a1a2e"/><stop offset="100%" stop-color="#0f3460"/></radialGradient></defs>
-            <rect width="320" height="190" fill="url(#vg1)"/>
-            <circle cx="160" cy="95" r="55" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-            <text x="160" y="75" text-anchor="middle" font-size="36">👶</text>
-            <text x="160" y="115" text-anchor="middle" font-size="18" fill="rgba(255,255,255,0.5)">First Steps</text>
-            <text x="160" y="140" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.3)">13 months old</text>
-          </svg>
-          <div class="play-btn">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <div class="video-duration">0:47</div>
-        </div>
-        <div class="video-info">
-          <div class="video-title">First Steps 👣</div>
-          <div class="video-sub">The moment we all held our breath</div>
-        </div>
-      </div>
-
-      <div class="video-card glass reveal s2">
-        <div class="video-thumb">
-          <svg viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
-            <defs><radialGradient id="vg2" cx="50%" cy="50%"><stop offset="0%" stop-color="#2d1b4e"/><stop offset="100%" stop-color="#1a0a2e"/></radialGradient></defs>
-            <rect width="320" height="190" fill="url(#vg2)"/>
-            <text x="160" y="75" text-anchor="middle" font-size="36">🎂</text>
-            <text x="160" y="115" text-anchor="middle" font-size="18" fill="rgba(255,255,255,0.5)">Birthday Party</text>
-            <text x="160" y="140" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.3)">Highlights reel</text>
-          </svg>
-          <div class="play-btn">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <div class="video-duration">3:12</div>
-        </div>
-        <div class="video-info">
-          <div class="video-title">Birthday Party Highlights 🎉</div>
-          <div class="video-sub">The cake-smashing, the singing, the tears of joy</div>
-        </div>
-      </div>
-
-      <div class="video-card glass reveal s3">
-        <div class="video-thumb">
-          <svg viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
-            <defs><radialGradient id="vg3" cx="50%" cy="50%"><stop offset="0%" stop-color="#0a2e1e"/><stop offset="100%" stop-color="#061a10"/></radialGradient></defs>
-            <rect width="320" height="190" fill="url(#vg3)"/>
-            <text x="160" y="75" text-anchor="middle" font-size="36">😂</text>
-            <text x="160" y="115" text-anchor="middle" font-size="18" fill="rgba(255,255,255,0.5)">Funny Moments</text>
-            <text x="160" y="140" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.3)">A 4-year compilation</text>
-          </svg>
-          <div class="play-btn">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <div class="video-duration">5:28</div>
-        </div>
-        <div class="video-info">
-          <div class="video-title">Funny Moments Compilation 😂</div>
-          <div class="video-sub">4 years of laughter in 5 minutes</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- LOVE MESSAGES -->
-<section id="messages">
-  <div class="container">
-    <div class="center reveal">
-      <div class="section-label">From the Heart</div>
-      <h2 class="section-title">Words of Love 💌</h2>
-      <p class="section-sub">From everyone who loves Mohammad Darain — every single word is true.</p>
-    </div>
-    <div class="messages-grid">
-
-      <div class="msg-card glass reveal s1" style="transform:rotate(-1.5deg);background:rgba(255,107,157,0.1);border-color:rgba(255,107,157,0.25);">
-        <span class="msg-heart">❤️</span>
-        <div class="msg-avatar" style="background:rgba(255,107,157,0.2);">👩</div>
-        <div class="msg-name">Mama</div>
-        <div class="msg-rel">Mama</div>
-        <div class="msg-text">From the very first second I held you, my whole world rearranged itself around you. You are my most beautiful adventure, my greatest joy, and the reason every day feels like a gift. Happy birthday, my baby. 💕</div>
-      </div>
-
-      <div class="msg-card glass reveal s2" style="transform:rotate(1.2deg);background:rgba(90,200,250,0.1);border-color:rgba(90,200,250,0.25);">
-        <span class="msg-heart">💙</span>
-        <div class="msg-avatar" style="background:rgba(90,200,250,0.2);">👨</div>
-        <div class="msg-name">Daida</div>
-        <div class="msg-rel">Daida</div>
-        <div class="msg-text">Watching you grow up is the greatest privilege of my life. You make me braver, sillier, and infinitely happier. I hope you always know that whatever happens, Dada is forever in your corner. So proud of you, champion. 🏆</div>
-      </div>
-
-      <div class="msg-card glass reveal s3" style="transform:rotate(-0.8deg);background:rgba(255,214,10,0.1);border-color:rgba(255,214,10,0.3);">
-        <span class="msg-heart">💛</span>
-        <div class="msg-avatar" style="background:rgba(255,214,10,0.2);">👵</div>
-        <div class="msg-name">Boba</div>
-        <div class="msg-rel">Grandma</div>
-        <div class="msg-text">My Mohammad Darain, you have your grandfather's eyes and your mother's smile, and your own irreplaceable magic. My prayers are always with you. May Allah bless you with happiness as wide as the sky. 🌟</div>
-      </div>
-
-      <div class="msg-card glass reveal s3" style="transform:rotate(-0.8deg);background:rgba(255,214,10,0.1);border-color:rgba(255,214,10,0.3);">
-        <span class="msg-heart">💛</span>
-        <div class="msg-avatar" style="background:rgba(255,214,10,0.2);">👵</div>
-        <div class="msg-name">Abi</div>
-        <div class="msg-rel">Grandma</div>
-        <div class="msg-text">My Mohammad Darain, you have your grandfather's eyes and your mother's smile, and your own irreplaceable magic. My prayers are always with you. May Allah bless you with happiness as wide as the sky. 🌟</div>
-      </div>
-
-      <div class="msg-card glass reveal s4" style="transform:rotate(1.8deg);background:rgba(52,199,89,0.1);border-color:rgba(52,199,89,0.25);">
-        <span class="msg-heart">💚</span>
-        <div class="msg-avatar" style="background:rgba(52,199,89,0.2);">👴</div>
-        <div class="msg-name">Abu</div>
-        <div class="msg-rel">Grandpa</div>
-        <div class="msg-text">When you grab my hand and say "Nana Abu, let's go!" — there is nothing on earth that could stop me from following you. You are our family's sunshine. Four candles, four celebrations, four years of being absolutely perfect. 🌈</div>
-      </div>
-
-      <div class="msg-card glass reveal s6" style="transform:rotate(0.9deg);background:rgba(255,159,10,0.1);border-color:rgba(255,159,10,0.25);">
-        <span class="msg-heart">🧡</span>
-        <div class="msg-avatar" style="background:rgba(255,159,10,0.2);">👨‍👧</div>
-        <div class="msg-name">Maamu</div>
-        <div class="msg-rel">Uncle</div>
-        <div class="msg-text">My little hero! Every time I visit, you make me feel like the most important person in the room — and that's a superpower not everyone has. You're going to do incredible things in this world, Mohammad Darain. We're all watching. 🚀</div>
-      </div>
-
-      <!-- <div class="msg-card glass reveal s5" style="transform:rotate(-1.2deg);background:rgba(191,90,242,0.1);border-color:rgba(191,90,242,0.25);">
-        <span class="msg-heart">💜</span>
-        <div class="msg-avatar" style="background:rgba(191,90,242,0.2);">🧕</div>
-        <div class="msg-name">Khala Ayesha</div>
-        <div class="msg-rel">Auntie</div>
-        <div class="msg-text">You are the funniest person I know and you're only 4 years old! The things you say and the faces you make are absolutely priceless. Growing up is going to look incredible on you, beta. Keep that wild, joyful spirit forever. 🦋</div>
-      </div> -->
-
-    </div>
-  </div>
-</section>
-
-<!-- CAKE COUNTDOWN -->
-<section id="cake-section">
-  <div class="container">
-    <div class="center reveal">
-      <div class="section-label">The Big Day</div>
-      <h2 class="section-title">The Birthday Countdown 🎂</h2>
-    </div>
-    <div class="cake-wrap">
-      <!-- Animated Cake SVG -->
-      <div class="cake-svg-wrap reveal">
-        <svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;overflow:visible;">
-          <!-- Plate -->
-          <ellipse cx="110" cy="175" rx="85" ry="12" fill="rgba(0,0,0,0.08)"/>
-          <!-- Cake bottom tier -->
-          <rect x="25" y="125" width="170" height="60" rx="14" fill="#FF8FB3"/>
-          <!-- Bottom tier frosting drips -->
-          <path d="M25 130 Q40 115 55 130 Q70 115 85 130 Q100 115 115 130 Q130 115 145 130 Q160 115 175 130 Q190 115 195 130" fill="#FFF0F5" stroke="none"/>
-          <!-- Top tier -->
-          <rect x="45" y="85" width="130" height="48" rx="12" fill="#FFB3CC"/>
-          <!-- Top frosting drips -->
-          <path d="M45 90 Q58 77 71 90 Q84 77 97 90 Q110 77 123 90 Q136 77 149 90 Q162 77 175 90" fill="white" stroke="none" opacity="0.9"/>
-          <!-- "4" decoration -->
-          <text x="110" y="155" text-anchor="middle" font-family="Nunito,sans-serif" font-size="30" font-weight="900" fill="white" opacity="0.9">4</text>
-          <!-- Stars on cake -->
-          <text x="60" y="148" font-size="12">⭐</text>
-          <text x="148" y="148" font-size="12">⭐</text>
-          <!-- Candles -->
-          <rect x="64" y="60" width="10" height="28" rx="4" fill="#FFD60A"/>
-          <rect x="85" y="54" width="10" height="34" rx="4" fill="#5AC8FA"/>
-          <rect x="106" y="60" width="10" height="28" rx="4" fill="#34C759"/>
-          <rect x="127" y="54" width="10" height="34" rx="4" fill="#BF5AF2"/>
-          <rect x="148" y="60" width="10" height="28" rx="4" fill="#FF9F0A"/>
-          <!-- Flames -->
-          <ellipse class="candle-flame" cx="69" cy="57" rx="6" ry="8" fill="#FF9F0A"/>
-          <ellipse class="candle-flame" cx="90" cy="51" rx="6" ry="8" fill="#FF9F0A"/>
-          <ellipse class="candle-flame" cx="111" cy="57" rx="6" ry="8" fill="#FF9F0A"/>
-          <ellipse class="candle-flame" cx="132" cy="51" rx="6" ry="8" fill="#FF9F0A"/>
-          <ellipse class="candle-flame" cx="153" cy="57" rx="6" ry="8" fill="#FF9F0A"/>
-          <!-- Inner flame highlights -->
-          <ellipse cx="69" cy="59" rx="3" ry="4" fill="#FFE066" opacity="0.7"/>
-          <ellipse cx="90" cy="53" rx="3" ry="4" fill="#FFE066" opacity="0.7"/>
-          <ellipse cx="111" cy="59" rx="3" ry="4" fill="#FFE066" opacity="0.7"/>
-          <ellipse cx="132" cy="53" rx="3" ry="4" fill="#FFE066" opacity="0.7"/>
-          <ellipse cx="153" cy="59" rx="3" ry="4" fill="#FFE066" opacity="0.7"/>
-        </svg>
-      </div>
-
-      <!-- Countdown -->
-      <div class="countdown-grid reveal">
+      
+      <div class="countdown-grid reveal s3">
         <div class="countdown-unit glass">
-          <div class="countdown-num" id="cd-days">00</div>
+          <div class="countdown-num">04</div>
+          <div class="countdown-lbl">Years</div>
+        </div>
+        <div class="countdown-unit glass">
+          <div class="countdown-num">00</div>
+          <div class="countdown-lbl">Months</div>
+        </div>
+        <div class="countdown-unit glass">
+          <div class="countdown-num">00</div>
           <div class="countdown-lbl">Days</div>
         </div>
         <div class="countdown-unit glass">
-          <div class="countdown-num" id="cd-hours">00</div>
-          <div class="countdown-lbl">Hours</div>
-        </div>
-        <div class="countdown-unit glass">
-          <div class="countdown-num" id="cd-mins">00</div>
-          <div class="countdown-lbl">Minutes</div>
-        </div>
-        <div class="countdown-unit glass">
-          <div class="countdown-num" id="cd-secs">00</div>
-          <div class="countdown-lbl">Seconds</div>
+          <div class="countdown-num">✨</div>
+          <div class="countdown-lbl">Old</div>
         </div>
       </div>
 
-      <p style="color:var(--text-secondary);font-size:15px;margin-bottom:30px;line-height:1.6;">
-        Until Mohammad Darain's 4th Birthday on <strong>June 16th</strong> 🎂<br>
-        <span style="color:var(--text-tertiary);font-size:13px;">Blow out the candles and make a wish!</span>
-      </p>
-
-      <button class="confetti-btn" id="confetti-btn" onclick="launchConfetti()">
-        🎉 Blow the Candles!
-      </button>
+      <button class="confetti-btn reveal s4" onclick="triggerConfettiShower()">Pop Confetti Spark! 🎉</button>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-emoji-row">🎈🎉🎂⭐🌟💖🎊🦋🌸</div>
-  <div class="footer-title">Made with 💖 for Mohammad Darain's 4th Birthday</div>
-  <p class="footer-sub">A celebration as bright as the boy himself</p>
-  <div class="social-icons">
-    <div class="social-icon" title="Share">📲</div>
-    <div class="social-icon" title="Print">🖨️</div>
-    <div class="social-icon" title="Save">❤️</div>
-  </div>
-  <p style="font-size:12px;color:var(--text-tertiary);margin-top:12px;">© 2026 · Made with love · Happy Birthday Mohammad Darain! 🎂</p>
-</footer>
-
-<!-- GALLERY LIGHTBOX -->
-<div id="lightbox">
-  <div class="lightbox-inner glass">
-    <button class="lb-close" id="lb-close">✕</button>
-    <button class="lb-nav" id="lb-prev">‹</button>
-    <button class="lb-nav" id="lb-next">›</button>
-    <div id="lb-content" style="min-height:300px;"></div>
-    <div style="padding:16px 20px;background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);">
-      <p id="lb-caption" style="font-weight:700;font-size:16px;color:var(--text-primary);margin-bottom:4px;"></p>
-      <p id="lb-sub" style="font-size:13px;color:var(--text-tertiary);"></p>
+  <footer>
+    <div class="footer-emoji-row">🎈 🧸 🍰 🥳 🌟</div>
+    <p class="footer-title">Happy 4th Birthday, Mohammad Darain!</p>
+    <p class="footer-sub">Designed with deep love &amp; magical elements for our little champion.</p>
+    <div class="social-icons">
+      <div class="social-icon">❤️</div>
+      <div class="social-icon">🎁</div>
+      <div class="social-icon">📸</div>
     </div>
-  </div>
-</div>
+  </footer>
 
-<script>
-// ── PARTICLES ──
-(function() {
-  const emojis = ['🎈','🎉','⭐','🌟','🎊','💖','🦋','🌸','🍭','🎂','🌈','✨','💫','🎀','🎁','🥳','🌺','💕','🎵','🍬'];
-  const container = document.getElementById('particles');
-  for (let i = 0; i < 22; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const sz = 16 + Math.random() * 22;
-    p.style.cssText = `
-      --sz:${sz}px;
-      --dur:${5 + Math.random() * 7}s;
-      --delay:${Math.random() * 6}s;
-      left:${Math.random() * 100}%;
-      top:${Math.random() * 100}%;
-      font-size:${sz}px;
-    `;
-    p.textContent = emojis[i % emojis.length];
-    container.appendChild(p);
-  }
-})();
-
-// ── NAVBAR SCROLL ──
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
-}, { passive: true });
-
-// ── MOBILE MENU ──
-document.getElementById('hamburger').addEventListener('click', () => {
-  document.getElementById('mobile-menu').classList.add('open');
-});
-document.getElementById('menu-close').addEventListener('click', () => {
-  document.getElementById('mobile-menu').classList.remove('open');
-});
-document.querySelectorAll('.mobile-link').forEach(a => {
-  a.addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open'));
-});
-
-// ── INTERSECTION OBSERVER REVEALS ──
-const reveals = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-reveals.forEach(el => io.observe(el));
-
-// ── GALLERY FILTER ──
-const filterBtns = document.querySelectorAll('.filter-btn');
-const galleryItems = document.querySelectorAll('.gallery-item');
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.filter;
-    galleryItems.forEach(item => {
-      const show = f === 'all' || item.dataset.year === f;
-      item.style.opacity = show ? '1' : '0';
-      item.style.transform = show ? '' : 'scale(0.9)';
-      item.style.pointerEvents = show ? '' : 'none';
-      item.style.transition = 'opacity 0.35s, transform 0.35s';
-    });
-  });
-});
-
-// ── LIGHTBOX ──
-const lightbox = document.getElementById('lightbox');
-const lbContent = document.getElementById('lb-content');
-const lbCaption = document.getElementById('lb-caption');
-const lbSub = document.getElementById('lb-sub');
-let currentLb = 0;
-const galleryArr = Array.from(document.querySelectorAll('.gallery-item'));
-
-function openLightbox(idx) {
-  currentLb = idx;
-  const item = galleryArr[idx];
-  const scene = item.querySelector('.gallery-scene').cloneNode(true);
-  scene.style.height = '380px';
-  lbContent.innerHTML = '';
-  lbContent.appendChild(scene);
-  lbCaption.textContent = item.querySelector('.gallery-overlay p')?.textContent || '';
-  lbSub.textContent = item.querySelector('.gallery-overlay span')?.textContent || '';
-  lightbox.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeLightbox() {
-  lightbox.classList.remove('open');
-  document.body.style.overflow = '';
-}
-galleryArr.forEach((item, idx) => item.addEventListener('click', () => openLightbox(idx)));
-document.getElementById('lb-close').addEventListener('click', closeLightbox);
-document.getElementById('lb-prev').addEventListener('click', () => openLightbox((currentLb - 1 + galleryArr.length) % galleryArr.length));
-document.getElementById('lb-next').addEventListener('click', () => openLightbox((currentLb + 1) % galleryArr.length));
-lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-document.addEventListener('keydown', e => {
-  if (!lightbox.classList.contains('open')) return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowLeft') openLightbox((currentLb - 1 + galleryArr.length) % galleryArr.length);
-  if (e.key === 'ArrowRight') openLightbox((currentLb + 1) % galleryArr.length);
-});
-
-// ── CAROUSEL ──
-const track = document.getElementById('carousel-track');
-const cards = track.querySelectorAll('.fact-card');
-const dotsContainer = document.getElementById('carousel-dots');
-let currentSlide = 0;
-let autoTimer;
-
-function getVisible() {
-  if (window.innerWidth >= 900) return 3;
-  if (window.innerWidth >= 600) return 2;
-  return 1;
-}
-
-function buildDots() {
-  dotsContainer.innerHTML = '';
-  const vis = getVisible();
-  const total = Math.ceil(cards.length / vis);
-  for (let i = 0; i < total; i++) {
-    const d = document.createElement('button');
-    d.className = 'dot' + (i === 0 ? ' active' : '');
-    d.addEventListener('click', () => goSlide(i));
-    dotsContainer.appendChild(d);
-  }
-}
-
-function goSlide(idx) {
-  const vis = getVisible();
-  const total = Math.ceil(cards.length / vis);
-  currentSlide = (idx + total) % total;
-  const cardW = cards[0].offsetWidth + 20;
-  track.style.transform = `translateX(-${currentSlide * vis * cardW}px)`;
-  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
-}
-
-function startAuto() {
-  clearInterval(autoTimer);
-  autoTimer = setInterval(() => goSlide(currentSlide + 1), 3500);
-}
-
-buildDots();
-startAuto();
-window.addEventListener('resize', () => { buildDots(); goSlide(0); }, { passive: true });
-
-// ── COUNTDOWN ──
-function updateCountdown() {
-  const now = new Date();
-  const year = now.getFullYear();
-  let target = new Date(year, 5, 16, 0, 0, 0); // June 16
-  if (now >= target) target = new Date(year + 1, 5, 16, 0, 0, 0);
-  const diff = target - now;
-  const d = Math.floor(diff / 86400000);
-  const h = Math.floor((diff % 86400000) / 3600000);
-  const m = Math.floor((diff % 3600000) / 60000);
-  const s = Math.floor((diff % 60000) / 1000);
-  document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
-  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-  document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
-  document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
-}
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
-// ── CONFETTI ──
-const canvas = document.getElementById('confetti-canvas');
-const ctx = canvas.getContext('2d');
-let confettiPieces = [];
-let animFrame;
-
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resizeCanvas, { passive: true });
-resizeCanvas();
-
-function launchConfetti() {
-  clearTimeout(window._confettiStop);
-  confettiPieces = [];
-  const colors = ['#FF6B9D','#5AC8FA','#FFD60A','#34C759','#BF5AF2','#FF9F0A','#FF3B30','#ffffff'];
-  for (let i = 0; i < 180; i++) {
-    confettiPieces.push({
-      x: Math.random() * canvas.width,
-      y: -20,
-      vx: (Math.random() - 0.5) * 6,
-      vy: Math.random() * 4 + 2,
-      color: colors[Math.floor(Math.random() * colors.length)],
-      size: Math.random() * 10 + 5,
-      rot: Math.random() * 360,
-      rotV: (Math.random() - 0.5) * 8,
-      shape: Math.random() > 0.5 ? 'rect' : 'circle'
-    });
-  }
-  if (animFrame) cancelAnimationFrame(animFrame);
-  drawConfetti();
-  window._confettiStop = setTimeout(() => {
-    cancelAnimationFrame(animFrame);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-  }, 4000);
-}
-
-function drawConfetti() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  confettiPieces.forEach(p => {
-    p.x += p.vx;
-    p.y += p.vy;
-    p.vy += 0.12;
-    p.rot += p.rotV;
-    ctx.save();
-    ctx.translate(p.x, p.y);
-    ctx.rotate(p.rot * Math.PI / 180);
-    ctx.fillStyle = p.color;
-    ctx.globalAlpha = Math.max(0, 1 - p.y / canvas.height);
-    if (p.shape === 'rect') {
-      ctx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
-    } else {
-      ctx.beginPath();
-      ctx.arc(0, 0, p.size / 2, 0, Math.PI * 2);
-      ctx.fill();
+  <script>
+    /* ── REVEAL SCROLL LOGIC ── */
+    const revealElements = document.querySelectorAll('.reveal');
+    function checkReveal() {
+      const triggerBottom = window.innerHeight * 0.92;
+      revealElements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if(top < triggerBottom) el.classList.add('visible');
+      });
     }
-    ctx.restore();
-  });
-  confettiPieces = confettiPieces.filter(p => p.y < canvas.height + 40);
-  if (confettiPieces.length > 0) {
-    animFrame = requestAnimationFrame(drawConfetti);
-  } else {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-  }
-}
-</script>
+    window.addEventListener('scroll', checkReveal);
+    window.addEventListener('load', checkReveal);
 
+    /* ── NAVBAR STYLE SHIFT ── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 40) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
+
+    /* ── MOBILE NAVBAR DRAWER ── */
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuClose = document.getElementById('menu-close');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+    menuClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+    /* ── PARTICLE SIMULATOR IN HERO ── */
+    const particlesBox = document.getElementById('particles');
+    const emojis = ['🎈', '🎉', '✨', '🎂', '🧸', '🌈', '🍭'];
+    if(particlesBox) {
+      for (let i = 0; i < 22; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+        p.style.left = Math.random() * 100 + '%';
+        p.style.top = Math.random() * 100 + '%';
+        p.style.setProperty('--sz', Math.random() * 18 + 14 + 'px');
+        p.style.setProperty('--dur', Math.random() * 4 + 4 + 's');
+        p.style.setProperty('--delay', Math.random() * -5 + 's');
+        particlesBox.appendChild(p);
+      }
+    }
+
+    /* ── DYNAMIC GUESTBOOK DYNAMIC SUBMISSION ENGINE ── */
+    const birthdayForm = document.getElementById('birthday-wish-form');
+    const messagesDisplayGrid = document.getElementById('messages-display-grid');
+    const avatarBackgrounds = [
+      'rgba(255,107,157,0.2)', // Pink
+      'rgba(90,200,250,0.2)',  // Blue
+      'rgba(255,214,10,0.2)',  // Yellow
+      'rgba(52,199,89,0.2)',   // Green
+      'rgba(191,90,242,0.2)',  // Purple
+      'rgba(255,159,10,0.2)'   // Orange
+    ];
+    const avatarColors = ['var(--pink)', 'var(--blue)', '#A57C00', 'var(--green)', 'var(--purple)', 'var(--orange)'];
+
+    birthdayForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const nameInput = document.getElementById('visitor-name');
+      const messageInput = document.getElementById('visitor-message');
+      
+      const name = nameInput.value.trim();
+      const message = messageInput.value.trim();
+      
+      if (!name || !message) return;
+      
+      // Select a matching aesthetic random palette for avatar layout
+      const randIdx = Math.floor(Math.random() * avatarBackgrounds.length);
+      const bg = avatarBackgrounds[randIdx];
+      const color = avatarColors[randIdx];
+      const initialLetter = name.charAt(0).toUpperCase();
+      
+      // Construct premium component matching native DOM cards
+      const card = document.createElement('div');
+      card.className = 'msg-card glass reveal visible';
+      card.style.borderLeft = `5px solid ${color}`;
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'all 0.5s cubic-bezier(0.34,1.56,0.64,1)';
+      
+      card.innerHTML = `
+        <div class="msg-heart">💖</div>
+        <div class="msg-avatar" style="background: ${bg}; color: ${color};">${initialLetter}</div>
+        <h3 class="msg-name">${escapeHTML(name)}</h3>
+        <p class="msg-rel">Well-wisher</p>
+        <p class="msg-text">"${escapeHTML(message)}"</p>
+      `;
+      
+      // Prepend to top of guestbook grid list seamlessly
+      messagesDisplayGrid.insertBefore(card, messagesDisplayGrid.firstChild);
+      
+      // Smooth trigger entry frame
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 50);
+      
+      // Clear variables gracefully & shift scroll focus down to show success entry
+      nameInput.value = '';
+      messageInput.value = '';
+      
+      // Trigger magical confetti burst celebration on active screen submission
+      triggerConfettiShower();
+      
+      document.getElementById('messages').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    function escapeHTML(str) {
+      return str.replace(/[&<>'"]/g, 
+        tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+      );
+    }
+
+    /* ── CAROUSEL STATS ENGINE ── */
+    const track = document.getElementById('carousel-track');
+    const dotsContainer = document.getElementById('carousel-dots');
+    let currentSlide = 0;
+    
+    function buildCarousel() {
+      const cards = track.querySelectorAll('.fact-card');
+      dotsContainer.innerHTML = '';
+      cards.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = `dot ${index === 0 ? 'active' : ''}`;
+        dot.addEventListener('click', () => selectSlide(index));
+        dotsContainer.appendChild(dot);
+      });
+    }
+    
+    function selectSlide(idx) {
+      currentSlide = idx;
+      const cardWidth = track.querySelector('.fact-card').getBoundingClientRect().width + 20; 
+      track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+      const dots = dotsContainer.querySelectorAll('.dot');
+      dots.forEach((d, i) => d.className = `dot ${i === currentSlide ? 'active' : ''}`);
+    }
+    
+    window.addEventListener('load', buildCarousel);
+    window.addEventListener('resize', () => selectSlide(currentSlide));
+
+    /* ── GALLERY FILTER ENGINE ── */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        
+        galleryItems.forEach(item => {
+          if(filter === 'all' || item.getAttribute('data-cat') === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    /* ── GALLERY LIGHTBOX UTILITY ── */
+    const lightbox = document.getElementById('lightbox');
+    const lbRender = document.getElementById('lightbox-render-area');
+    let activeLbIndex = 0;
+    
+    function openLightbox(index) {
+      activeLbIndex = index;
+      lightbox.classList.add('open');
+      lbRender.innerHTML = `<div style="text-align:center; color:white; font-size:18px;">📸 Viewing Gallery Record Item #${index + 1}</div>`;
+    }
+    function closeLightbox() { lightbox.classList.remove('open'); }
+    function changeLightbox(dir) {
+      activeLbIndex = (activeLbIndex + dir + 3) % 3; // wrap index bound limit
+      openLightbox(activeLbIndex);
+    }
+
+    /* ── HIGH PERFORMANCE CANVAS CONFETTI ENGINE ── */
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    let confettiPieces = [];
+    let animFrame;
+    const colors = [ 'var(--pink)', 'var(--blue)', 'var(--yellow)', 'var(--green)', 'var(--purple)', 'var(--orange)' ];
+
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function triggerConfettiShower() {
+      confettiPieces = [];
+      for (let i = 0; i < 120; i++) {
+        confettiPieces.push({
+          x: Math.random() * canvas.width,
+          y: -20,
+          vx: (Math.random() - 0.5) * 6,
+          vy: Math.random() * 4 + 2,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          size: Math.random() * 10 + 5,
+          rot: Math.random() * 360,
+          rotV: (Math.random() - 0.5) * 8,
+          shape: Math.random() > 0.5 ? 'rect' : 'circle'
+        });
+      }
+      if (animFrame) cancelAnimationFrame(animFrame);
+      drawConfetti();
+      window._confettiStop = setTimeout(() => {
+        cancelAnimationFrame(animFrame);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }, 4000);
+    }
+
+    function drawConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      confettiPieces.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.12; // gravity pull
+        p.rot += p.rotV;
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot * Math.PI / 180);
+        ctx.fillStyle = p.color;
+        if(p.shape === 'rect') {
+          ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+        } else {
+          ctx.beginPath();
+          ctx.arc(0,0, p.size/2, 0, Math.PI*2);
+          ctx.fill();
+        }
+        ctx.restore();
+      });
+      animFrame = requestAnimationFrame(drawConfetti);
+    }
+  </script>
 </body>
 </html>
